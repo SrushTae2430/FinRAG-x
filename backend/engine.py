@@ -53,8 +53,13 @@ def _call(prompt, max_tokens):
             if ("429" in msg or "Connection" in msg) and attempt < 7:
                 m = re.search(r"try again in (?:(\d+)m)?\s*([\d.]+)s", msg)
                 wait = (int(m.group(1) or 0) * 60 + float(m.group(2)) + 2) if m else 20
+                if wait > 45:
+                    raise RuntimeError(
+                        f"The language model is rate-limited (retry in about {int(wait // 60)} min). "
+                        "Please try again later."
+                    )
                 print(f"  rate limit, waiting {int(wait)}s ...")
-                time.sleep(min(wait, 900))
+                time.sleep(wait)
                 continue
             raise
         choice = r.choices[0]
@@ -322,7 +327,7 @@ If the evidence does not contain the answer, reply exactly: INSUFFICIENT EVIDENC
 {calc_note}
 Question: {question}
 Evidence:
-{ev}""", max_tokens=1500)
+{ev}""", max_tokens=600)
 
 
 def direct_answer(question):

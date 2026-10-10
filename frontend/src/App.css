@@ -255,3 +255,20 @@ table { font-size: 0.88rem; }
 .checks .fail .mark { color: var(--red); }
 .checks .fail { color: var(--red); }
 .meta-line { font-size: 0.9rem; }
+
+mark {
+  background: #efe3a1;
+  color: inherit;
+  padding: 0 2px;
+  border-radius: 1px;
+}
+.hl-note { margin: 0 0 8px; font-size: 0.82rem; color: var(--muted); }
+
+.who { margin-left: auto; font-size: 0.85rem; color: var(--muted); }
+.auth { max-width: 420px; }
+.field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; font-size: 0.85rem; color: var(--muted); }
+.field input, .upload input[type="file"] {
+  padding: 9px 10px; background: var(--paper); border: 1px solid var(--line);
+  border-radius: 2px; color: var(--ink); font: inherit; font-size: 0.95rem;
+}
+.upload { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; margin-top: 12px; }

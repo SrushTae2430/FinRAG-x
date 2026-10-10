@@ -30,9 +30,107 @@ def expand_with_page(evidence, max_extra=3):
     page.sort(key=lambda c: c["type"] != "table")              # tables first
     return evidence + page[:max_extra]
 
+# ---------- metadata filtering (company / report year) ----------
+_PREFIX_RE = re.compile(r"^\[([^|\]]+)\|\s*(\d{4})\s*\|")
+_SUFFIXES = {"corporation", "corp", "inc", "company", "co", "ltd", "plc", "group", "holdings", "the"}
 
-def answer_question(q, mode="dense", expand=True, use_calc=True, use_checker=True):
-    evidence = R.search(q, k=5, mode=mode)
+_CTX_META = {}          # context_id -> (normalized company, year)
+for _c in R.chunks:
+    _cid = _c["context_id"]
+    if _cid in _CTX_META:
+        continue
+    _m = _PREFIX_RE.match(_c["text"])
+    if _m:
+        _words = [w for w in re.findall(r"[a-z0-9&]+", _m.group(1).lower()) if w not in _SUFFIXES]
+        _CTX_META[_cid] = (" ".join(_words), _m.group(2))
+
+
+def parse_filters(q):
+    """Return {'context_id': set(...)} from company/year mentioned in the question, or None."""
+    ql = q.lower()
+    company = None
+    for name in sorted({m[0] for m in _CTX_META.values() if len(m[0]) >= 3}, key=len, reverse=True):
+        if re.search(r"\b" + re.escape(name) + r"\b", ql):
+            company = name
+            break
+    ym = re.search(r"\b((?:19|20)\d{2})\s+(?:financial|annual|form 10-k|10-k)", ql)
+    year = ym.group(1) if ym else None
+    if not company and not year:
+        return None
+    ids = {cid for cid, (n, y) in _CTX_META.items()
+           if (company is None or n == company) and (year is None or y == year)}
+    return {"context_id": ids} if ids else None
+
+
+def retrieve(q, k=5, mode="hybrid_rerank", use_filter=False, only_ids=None):
+    if only_ids:
+        return R.search(q, k=k, mode=mode, filters={"context_id": set(only_ids)})
+    if use_filter:
+        flt = parse_filters(q)
+        if flt:
+            found = R.search(q, k=k, mode=mode, filters=flt)
+            if found:
+                return found
+    return R.search(q, k=k, mode=mode)
+
+# ---------- question router (rule-based) ----------
+_RISK = ("risk", "uncertaint", "litigation", "exposure", "adverse", "could affect", "may affect", "contingen")
+_COMPARE = ("compare", "versus", " vs ", "higher than", "lower than", "greater than", "less than", "which segment", "which year", "which is")
+_MULTI = ("combined", "both", "respectively", "in total across", "sum of", "together")
+
+
+def classify_question(q):
+    ql = " " + q.lower() + " "
+    if any(w in ql for w in _RISK):
+        return "risk"
+    if any(w in ql for w in _COMPARE):
+        return "comparison"
+    years = set(re.findall(r"\b(?:19|20)\d{2}\b", ql))
+    if any(w in ql for w in _MULTI) or len(years) >= 3:
+        return "multi-hop"
+    if is_numeric_question(q):
+        return "numerical"
+    return "fact"
+
+# ---------- document upload: add chunks to the live index ----------
+_UPLOAD_N = [0]
+
+
+def add_document(name, pages):
+    """pages: list of (page_number, text). Returns (context_id, chunk_count)."""
+    import numpy as np
+    from rank_bm25 import BM25Okapi
+    from retrieval import tokenize
+
+    _UPLOAD_N[0] += 1
+    num = 900000 + _UPLOAD_N[0]
+    ctx = f"upload_{num}"
+    new, n = [], 0
+    for pno, text in pages:
+        cur = ""
+        for line in [l.strip() for l in text.splitlines() if l.strip()] + [None]:
+            if line is None or (cur and len(cur) + len(line) + 1 > 900):
+                if cur:
+                    new.append({
+                        "chunk_id": f"D{num}_C{n}", "context_id": ctx, "type": "text",
+                        "text": f"[{name} | upload | page {pno}] {cur}",
+                    })
+                    n += 1
+                cur = line or ""
+            else:
+                cur = (cur + " " + line).strip()
+    new = new[:400]
+    if not new:
+        raise ValueError("No readable text found in this file.")
+    vecs = R.emb.encode([c["text"][:2000] for c in new],
+                        normalize_embeddings=True, show_progress_bar=False)
+    R.index.add(np.ascontiguousarray(vecs, dtype="float32"))
+    R.chunks.extend(new)
+    R.bm25 = BM25Okapi([tokenize(c["text"][:2000]) for c in R.chunks])
+    return ctx, len(new)
+
+def answer_question(q, mode="dense", expand=True, use_calc=True, use_checker=True, use_filter=False, only_ids=None):
+    evidence = retrieve(q, k=5, mode=mode, use_filter=use_filter, only_ids=only_ids)
     if expand:
         evidence = expand_with_page(evidence)
 
@@ -135,6 +233,7 @@ def answer_question(q, mode="dense", expand=True, use_calc=True, use_checker=Tru
 
     return {
         "question": q,
+        "question_type": classify_question(q),
         "answer": answer if passed else "Insufficient evidence to answer reliably.",
         "raw_answer": answer,
         "passed": passed,
@@ -142,7 +241,7 @@ def answer_question(q, mode="dense", expand=True, use_calc=True, use_checker=Tru
         "calc_error": calc_error,
         "result": None if result is None else round(result, 4),
         "evidence": [{"id": c["chunk_id"], "context_id": c["context_id"], "type": c["type"],
-                      "text": c["text"][:800]} for c in evidence],
+                      "text": c["text"][:4000]} for c in evidence],
         "checks": checks,
         "evidence_coverage": coverage,
     }
