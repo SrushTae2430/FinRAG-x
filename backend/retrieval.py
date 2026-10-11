@@ -61,8 +61,9 @@ class Retriever:
         print("Loading embedding model...")
         self.emb = SentenceTransformer(dense_model)
 
-        print("Loading reranking model...")
-        self.rerank = CrossEncoder(rerank_model)
+        # Load the reranking model only when it is needed.
+        self.rerank_model = rerank_model
+        self.rerank = None
 
         print("Loading or creating embeddings...")
         vectors = self._embeddings(texts, dense_model)
@@ -159,7 +160,9 @@ class Retriever:
         ]
 
         scores = self.rerank.predict(pairs)
-
+        if self.rerank is None:
+            print("Loading reranking model on demand...")
+            self.rerank = CrossEncoder(self.rerank_model)
         order = np.argsort(-np.asarray(scores))
 
         return [
