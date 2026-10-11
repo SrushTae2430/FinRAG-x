@@ -7,3 +7,8 @@ venv/
 .env
 .env.*
 !.env.example
+# FinRAG-X generated files
+data/llm_cache/
+data/users.db
+data/extra_metrics.json
+data/sufficiency.json

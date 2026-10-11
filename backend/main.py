@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 from typing import Optional
 
@@ -13,13 +14,22 @@ from pipeline import R, add_document, answer_question
 
 DATA = Path(__file__).resolve().parent.parent / "data"
 
+
 app = FastAPI()
+
+allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    os.environ.get("FRONTEND_URL", "").rstrip("/"),
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=[origin for origin in allowed_origins if origin],
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 DOCS = {}  # context_id -> {"name", "chunks", "owner"}  (in memory; cleared on restart)
 
