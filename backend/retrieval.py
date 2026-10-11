@@ -154,15 +154,17 @@ class Retriever:
         if not candidates:
             return []
 
+        # Load the reranker on first use (must happen BEFORE predict).
+        if self.rerank is None:
+            print("Loading reranking model on demand...")
+            self.rerank = CrossEncoder(self.rerank_model)
+
         pairs = [
             (query, self.chunks[index]["text"][:1500])
             for index in candidates
         ]
 
         scores = self.rerank.predict(pairs)
-        if self.rerank is None:
-            print("Loading reranking model on demand...")
-            self.rerank = CrossEncoder(self.rerank_model)
         order = np.argsort(-np.asarray(scores))
 
         return [
@@ -278,4 +280,3 @@ class Retriever:
             self.chunks[index]
             for index in ranked[:k]
         ]
-
