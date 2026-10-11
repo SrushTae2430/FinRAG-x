@@ -3,10 +3,19 @@ import os
 from pathlib import Path
 from typing import Optional
 
+# Load .env from repo root (LLM_API_KEY, FINRAG_MODEL, etc.)
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).resolve().parent.parent / ".env", override=False)
+except ImportError:
+    pass
+
 import pandas as pd
 import pymupdf as fitz
 from fastapi import Depends, FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from auth import current_user, login as do_login, signup as do_signup
@@ -20,6 +29,8 @@ app = FastAPI()
 allowed_origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
     os.environ.get("FRONTEND_URL", "").rstrip("/"),
 ]
 
@@ -29,6 +40,16 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# ── Serve the vanilla-JS SPA from /static ───────────────────────────────────
+STATIC_DIR = Path(__file__).resolve().parent / "static"
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
+
+@app.get("/", include_in_schema=False)
+def root():
+    """Serve the SPA shell."""
+    return FileResponse(STATIC_DIR / "index.html")
 
 
 DOCS = {}  # context_id -> {"name", "chunks", "owner"}  (in memory; cleared on restart)
