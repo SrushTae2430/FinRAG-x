@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { ask, uploadDoc, type AskResponse } from "./api"
 import Login from "./Login"
+import { Compare } from "./Extra"
 import "./App.css"
 
 const EXAMPLE =
@@ -394,6 +395,7 @@ function Workspace({ token, email, onLogout }: { token: string; email: string; o
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "")
   const [email, setEmail] = useState(localStorage.getItem("email") || "")
+  const [page, setPage] = useState("ask")
 
   function onAuth(t: string, e: string) {
     localStorage.setItem("token", t)
@@ -409,7 +411,26 @@ export default function App() {
     setEmail("")
   }
 
-  return token
-    ? <Workspace token={token} email={email} onLogout={logout} />
-    : <Login onAuth={onAuth} />
+  if (!token) return <Login onAuth={onAuth} />
+
+  const tabs: [string, string][] = [
+    ["ask", "Analyze"],
+    ["compare", "Compare retrieval"],
+  ]
+
+  return (
+    <>
+      <nav className="tabbar">
+        <div className="tabs">
+          {tabs.map(([k, l]) => (
+            <button key={k} className={page === k ? "on" : ""} onClick={() => setPage(k)}>{l}</button>
+          ))}
+        </div>
+      </nav>
+      <div style={{ display: page === "ask" ? "block" : "none" }}>
+        <Workspace token={token} email={email} onLogout={logout} />
+      </div>
+      {page === "compare" && <Compare token={token} onLogout={logout} />}
+    </>
+  )
 }

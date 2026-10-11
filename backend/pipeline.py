@@ -73,6 +73,43 @@ def retrieve(q, k=5, mode="hybrid_rerank", use_filter=False, only_ids=None):
                 return found
     return R.search(q, k=k, mode=mode)
 
+# ---------- evidence-sufficiency heuristic (informational) ----------
+_STOP = {"what", "which", "that", "this", "with", "from", "were", "have", "been", "between",
+         "percentage", "change", "total", "value", "report", "reported", "financial", "year",
+         "years", "company", "about", "their", "does", "than", "amount", "during", "after",
+         "before", "would", "where", "when", "much", "many", "rate", "ratio"}
+
+
+def _company_in_question(q):
+    ql = q.lower()
+    for name in sorted({m[0] for m in _CTX_META.values() if len(m[0]) >= 3}, key=len, reverse=True):
+        if re.search(r"\b" + re.escape(name) + r"\b", ql):
+            return name
+    return None
+
+
+def _chunk_company(text):
+    m = _PREFIX_RE.match(text)
+    if not m:
+        return None
+    words = [w for w in re.findall(r"[a-z0-9&]+", m.group(1).lower()) if w not in _SUFFIXES]
+    return " ".join(words)
+
+
+def check_sufficiency(q, evidence):
+    ev_text = " ".join(c["text"] for c in evidence).lower()
+    words = {w for w in re.findall(r"[a-z]{4,}", q.lower()) if w not in _STOP}
+    coverage = sum(w in ev_text for w in words) / len(words) if words else 1.0
+    company = _company_in_question(q)
+    company_ok = None
+    if company:
+        company_ok = any(_chunk_company(c["text"]) == company for c in evidence)
+    return {
+        "sufficient": coverage >= 0.5 and company_ok is not False,
+        "keyword_coverage": round(coverage, 2),
+        "company_in_evidence": company_ok,
+    }
+
 # ---------- question router (rule-based) ----------
 _RISK = ("risk", "uncertaint", "litigation", "exposure", "adverse", "could affect", "may affect", "contingen")
 _COMPARE = ("compare", "versus", " vs ", "higher than", "lower than", "greater than", "less than", "which segment", "which year", "which is")
@@ -236,6 +273,7 @@ def answer_question(q, mode="dense", expand=True, use_calc=True, use_checker=Tru
         "question_type": classify_question(q),
         "answer": answer if passed else "Insufficient evidence to answer reliably.",
         "raw_answer": answer,
+        "evidence_sufficiency": check_sufficiency(q, evidence),
         "passed": passed,
         "program": program,
         "calc_error": calc_error,

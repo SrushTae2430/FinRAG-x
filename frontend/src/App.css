@@ -272,3 +272,12 @@ mark {
   border-radius: 2px; color: var(--ink); font: inherit; font-size: 0.95rem;
 }
 .upload { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; margin-top: 12px; }
+
+.tabbar { background: var(--paper); border-bottom: 1px solid var(--line); }
+.tabs { max-width: 880px; margin: 0 auto; padding: 8px 24px 0; display: flex; gap: 22px; }
+.tabs button {
+  background: none; border: 0; border-bottom: 2px solid transparent;
+  border-radius: 0; padding: 6px 0; color: var(--muted); font-weight: 600;
+}
+.tabs button:hover { color: var(--ink); }
+.tabs button.on { color: var(--green); border-bottom-color: var(--green); }

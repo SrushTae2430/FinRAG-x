@@ -1,12 +1,17 @@
+import json
+from pathlib import Path
 from typing import Optional
 
-import fitz  # PyMuPDF
+import pandas as pd
+import pymupdf as fitz
 from fastapi import Depends, FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from auth import current_user, login as do_login, signup as do_signup
-from pipeline import add_document, answer_question
+from pipeline import R, add_document, answer_question
+
+DATA = Path(__file__).resolve().parent.parent / "data"
 
 app = FastAPI()
 app.add_middleware(
@@ -28,6 +33,10 @@ class AskRequest(BaseModel):
 class Cred(BaseModel):
     email: str
     password: str
+
+
+class CompareRequest(BaseModel):
+    question: str
 
 
 @app.get("/health")
@@ -82,3 +91,40 @@ def ask(req: AskRequest, user: str = Depends(current_user)):
         return answer_question(req.question, req.mode, only_ids=only)
     except Exception as e:
         raise HTTPException(503, f"{type(e).__name__}: {str(e)[:300]}")
+
+
+@app.post("/compare")
+def compare(req: CompareRequest, user: str = Depends(current_user)):
+    """Retrieval only (no language-model call): top-5 chunks for each retrieval mode."""
+    out = {}
+    for m in ["bm25", "dense", "hybrid", "hybrid_rerank"]:
+        found = R.search(req.question, k=5, mode=m)
+        out[m] = [{"id": c["chunk_id"], "type": c["type"], "text": c["text"][:240]} for c in found]
+    return out
+
+
+def _read_json(name):
+    p = DATA / name
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
+
+
+@app.get("/metrics")
+def metrics(user: str = Depends(current_user)):
+    main = None
+    p = DATA / "eval_results_v2.csv"
+    if p.exists():
+        df = pd.read_csv(p)
+        raw_wrong = ~df.D_raw_correct
+        main = {
+            "n": int(len(df)),
+            "A": int(df.A_correct.sum()), "B": int(df.B_correct.sum()),
+            "C": int(df.C_correct.sum()), "D": int(df.D_correct.sum()),
+            "D_raw": int(df.D_raw_correct.sum()),
+            "refused": int(df.D_refused.sum()),
+            "raw_wrong": int(raw_wrong.sum()),
+            "blocked_wrong": int((df.D_refused & raw_wrong).sum()),
+            "blocked_correct": int((df.D_refused & df.D_raw_correct).sum()),
+        }
+    return {"main": main,
+            "retrieval": _read_json("extra_metrics.json"),
+            "sufficiency": _read_json("sufficiency.json")}

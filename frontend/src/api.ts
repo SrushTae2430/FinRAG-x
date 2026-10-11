@@ -58,3 +58,17 @@ export async function uploadDoc(file: File, token: string) {
   })
   return handle(res) as Promise<{ id: string; name: string; chunks: number }>
 }
+
+export async function getMetrics(token: string) {
+  const res = await fetch(`${BASE}/metrics`, { headers: { Authorization: `Bearer ${token}` } })
+  return handle(res)
+}
+
+export async function compareModes(question: string, token: string) {
+  const res = await fetch(`${BASE}/compare`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+    body: JSON.stringify({ question }),
+  })
+  return handle(res)
+}
