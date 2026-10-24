@@ -1,0 +1,32 @@
+{
+  "n": 50,
+  "modes": {
+    "bm25": {
+      "r5": 44,
+      "r10": 47,
+      "latency": 0.57
+    },
+    "dense": {
+      "r5": 47,
+      "r10": 47,
+      "latency": 0.45
+    },
+    "hybrid": {
+      "r5": 47,
+      "r10": 49,
+      "latency": 0.43
+    },
+    "hybrid_rerank": {
+      "r5": 47,
+      "r10": 49,
+      "latency": 5.13
+    }
+  },
+  "citation": {
+    "answers": 39,
+    "answers_with_citation": 31,
+    "cited_total": 33,
+    "cited_gold": 8,
+    "answers_citing_gold": 7
+  }
+}

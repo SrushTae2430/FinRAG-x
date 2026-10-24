@@ -1,14 +1,18 @@
+# Python
 __pycache__/
 *.pyc
-
 venv/
 .venv/
 
+# Node
+node_modules/
+frontend/dist/
+
+# Secrets
 .env
 .env.*
 !.env.example
-# FinRAG-X generated files
+
+# Local-only data (accounts and LLM response cache)
 data/llm_cache/
 data/users.db
-data/extra_metrics.json
-data/sufficiency.json
