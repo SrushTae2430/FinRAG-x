@@ -72,3 +72,8 @@ export async function compareModes(question: string, token: string) {
   })
   return handle(res)
 }
+
+export async function getResults(token: string) {
+  const res = await fetch(`${BASE}/results`, { headers: { Authorization: `Bearer ${token}` } })
+  return handle(res)
+}

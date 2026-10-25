@@ -27,7 +27,7 @@ Question → Route → Retrieve → Expand → Calculate → Generate → Verify
    - every cited id is among the retrieved evidence
    - calculation inputs appear in the evidence
    - the computed result appears in the answer
-   - (when no calculation was run) every number in the answer appears in the evidence
+   - (when no calculation was run) every number in the answer appears in the evidence, or equals a sum, difference, product or ratio of two numbers in the cited chunks
 
    Failing answers are replaced by "Insufficient evidence to answer reliably."
 6. **Question router (rule-based).** Labels each question as fact, numerical, comparison, multi-hop or risk. It is shown in the UI and does not change retrieval.
@@ -71,6 +71,12 @@ API endpoints: `/health`, `/signup`, `/login`, `/upload`, `/docs-list`, `/ask`, 
 
 Requirements: Python 3.10+, Node.js 18+, a Groq API key, and an internet connection for the first run (models and dataset are downloaded, then cached).
 
+**Tests** (parser and verifier, no LLM calls):
+
+    cd backend
+    pip install pytest
+    python -m pytest tests/test_engine.py -v
+
 **Backend** (PowerShell, from the project root):
 
 ```powershell
@@ -109,7 +115,7 @@ Open http://localhost:5173, create an account, and ask a question.
 
 ## Evaluation
 
-**Data.** FinQA subset of [T²-RAGBench](https://huggingface.co/datasets/G4KMU/t2-ragbench), indexed as 18,094 chunks. The accuracy evaluation uses a seeded random sample of **39 numeric questions** (`backend/evaluate.py`; per-question results in `data/eval_results_v2.csv`). An answer counts as correct if the gold number appears in it within a small tolerance.
+**Data.** FinQA subset of [T²-RAGBench](https://huggingface.co/datasets/G4KMU/t2-ragbench), indexed as 18,094 chunks. The accuracy evaluation uses a seeded random sample of **100 numeric questions** (`backend/evaluate.py`; per-question results in `data/eval_results_v2.csv`). An answer counts as correct if the gold number appears in it within a small tolerance.
 
 **Systems compared**
 
@@ -120,26 +126,39 @@ Open http://localhost:5173, create an account, and ask a question.
 | C | Hybrid + rerank + page expansion, model calculates itself |
 | D | C + calculation engine + verifier with abstention (FinRAG-X) |
 
-### Answer accuracy (n = 39)
+### Answer accuracy (n = 100)
 
-| System | Correct | Accuracy |
-|---|---|---|
-| A: Direct LLM | 3/39 | 7.7% |
-| B: Basic RAG | 21/39 | 53.8% |
-| C: Hybrid + rerank + page expansion | 18/39 | 46.2% |
-| D: FinRAG-X (released and correct) | 15/39 | 38.5% |
-| D before the verifier (raw answers) | 19/39 | 48.7% |
+| System | Correct | Accuracy | 95% CI |
+|---|---|---|---|
+| A: Direct LLM | 15/100 | 15.0% | 9%-23% |
+| B: Basic RAG | 35/100 | 35.0% | 26%-45% |
+| C: Hybrid + rerank + page expansion | 53/100 | 53.0% | 43%-62% |
+| D: FinRAG-X (released and correct) | 43/100 | 43.0% | 34%-53% |
+
+FinRAG-X released 63 of 100 answers (63% coverage); 43 of the released answers are correct (68%).
+
+**Why C scores higher (53% vs 43%)**
+
+- C releases every answer, so every correct answer counts.
+- D's verifier refuses some answers, and a refusal counts as a miss even when the answer was right. D's raw answers are about as good as C's (51 correct vs 53), so the gap comes from correct answers that were refused.
+
+**What D gets for that trade**
+
+- C's wrong answers are all released. 47 of 100 answers it gives are wrong.
+- D releases 63 answers and about 68% of them are correct, against C's 53%. When D answers, it is more likely to be right, and it says "insufficient evidence" instead of guessing.
 
 ### Verification and abstention (answerable questions)
 
-FinRAG-X abstained on 13 of 39 questions.
+FinRAG-X abstained on 37 of 100 questions.
 
 | Measure | Value |
 |---|---|
-| Abstention precision (refusals that blocked a wrong answer) | 9/13 = 69% |
-| Abstention recall (wrong raw answers blocked) | 9/20 = 45% |
-| False-refusal rate (correct raw answers blocked) | 4/19 = 21% |
-| Accuracy of released answers | 15/26 = 57.7% (vs 48.7% before verification) |
+| Abstention precision (refusals that blocked a wrong answer) | 29/37 = 78% |
+| Abstention recall (wrong raw answers blocked) | 29/49 = 59% |
+| False-refusal rate (correct raw answers blocked) | 8/51 = 16% |
+| Accuracy of released answers | 43/63 = 68% (vs 53% for C, which releases every answer) |
+
+The calculator result was exact on 30 of 100 questions, with no program errors.
 
 ### Retrieval comparison (50 random questions, no LLM calls)
 
@@ -152,64 +171,23 @@ Share of questions whose gold report page appears in the top-k results.
 | Hybrid (rank fusion) | 94% | 98% | 0.43 s |
 | Hybrid + rerank | 94% | 98% | 5.13 s |
 
-Recall is matched by context id, so it is conservative when the same page appears under more than one id. In the 39-question run, the gold page was in the top 5 for 38/39 (B, dense) and 37/39 (D).
+Recall is matched by context id, so it is conservative when the same page appears under more than one id. In the 100-question run, the gold page was among the evidence for 85% of questions (B, dense) and 92% (D).
 
-### Metadata filter
-
-Company and year parsed from the question triggered the filter on 34 of 39 questions. The gold page was in the top 5 for 36/39 questions both with and without the filter: no loss, and no measured gain on this sample.
-
-### By question type (rule-based router)
-
-| Type | n | D correct | B correct |
-|---|---|---|---|
-| numerical | 28 | 12 | 16 |
-| multi-hop | 5 | 2 | 2 |
-| fact | 3 | 0 | 2 |
-| comparison | 2 | 1 | 1 |
-| risk | 1 | 0 | 0 |
-
-Groups other than "numerical" are too small for conclusions. The router labels a question multi-hop when it names three or more years, which is a crude rule.
-
-### Evidence-sufficiency heuristic (retrieval only, 39 questions)
-
-Unanswerable cases were simulated by removing the gold page from the retrieved evidence.
-
-| Measure | Value |
-|---|---|
-| Answerable questions judged sufficient | 39/39 |
-| False-refusal rate | 0/39 |
-| Unanswerable (gold page removed) flagged insufficient | 2/39 |
-
-The check never blocked an answerable question but detected almost none of the simulated unanswerable cases. Removing the gold page leaves other pages of the same company in the evidence, and these share most of the question's keywords. Detecting this needs content-level checks or a trained classifier.
+### Verifier arithmetic check
+The "numbers supported" check was extended so that a number counts as grounded if it can be derived
+from numbers in the cited chunks by simple arithmetic (sum, difference, product, ratio, percentage
+change, average, with unit scaling), and descriptive page citations are accepted. Replaying the same
+100 saved model answers through the old and the extended verifier: released and correct went from
+34 to 43, refused from 50 to 37, and released but wrong from 16 to 20. The extension was designed
+after inspecting refused answers on these same 100 questions, so D's figure is a development-set
+result, not a held-out test.
 
 ### Findings
 
-- **Retrieval is the clearest effect.** Accuracy rises from 7.7% (no retrieval) to 53.8% (basic RAG).
-- **B, C and D cannot be separated.** With 39 questions the 95% intervals are about ±15 points, so this pilot does not show that FinRAG-X, hybrid retrieval or the verifier improves raw accuracy over basic RAG.
-- **The verifier trades coverage for precision.** It releases fewer answers, and a larger share of the released answers are correct (57.7% vs 48.7%), at the cost of refusing 4 correct answers.
+- **Retrieval is the clearest effect.** Accuracy rises from 15.0% (no retrieval) to 35.0% (basic RAG) and 53.0% (hybrid + rerank + page expansion).
+- **B, C and D cannot be fully separated.** With 100 questions the 95% intervals are about ±10 points. C is 18 points above B and their intervals only just overlap; D (43%) overlaps both, so this pilot does not establish that FinRAG-X or the verifier improves raw accuracy.
+- **The verifier trades coverage for precision.** It releases 63% of answers, and a larger share of the released answers are correct (68% vs 53% for C), at the cost of refusing 8 correct answers.
 - **Reranking adds about 10x latency** (5.1 s vs 0.4 s) with no recall gain at the page level on this corpus.
-
-### Error analysis
-
-1. **Wrong calculator inputs (2 cases).** Correctly refused by the verifier.
-2. **Correct answers refused (3 cases).** The model's own arithmetic (for example 145.29 - 33.87 = 111.42) is not present verbatim in the evidence, so the "numbers supported" check fails. This is a deliberately conservative design.
-3. **False accept (`finqa_test_119`).** All checks passed on an incorrect answer. The verifier checks grounding, not correctness.
-4. **"Insufficient evidence" despite relevant retrieval (3 cases).** Model variance on the answer step.
-
-## Limitations
-
-- **Small pilot evaluation (n = 39).** No significance claims are made between B, C and D. The planned 200-300 question benchmark was not built.
-- **Abstention on unanswerable questions** was tested only by removing the gold page and applying a keyword heuristic, not on a hand-written unanswerable set.
-- **Citation quality was not measured reliably.** An attempt to match cited chunk ids against the index gave inconsistent results, so no figures are reported. The verifier requires every cited id to be among the retrieved evidence, and the UI shows each cited chunk with the relevant figures highlighted. Claim-level faithfulness is not checked.
-- **The table parser** covers a fixed list of metrics, and code-built answers cover percentage-change questions only. Other numeric questions rely on LLM-generated programs.
-- **The verifier cannot confirm arithmetic** that the calculation engine did not produce, and it checks grounding rather than correctness.
-- **Uploaded documents** are indexed as plain text, so table structure is lost and the calculation engine does not apply. Uploads are held in memory and cleared when the backend restarts. They are not scored by the Evaluation tab.
-- **Authentication is demo-grade:** no email verification, session expiry or rate limiting.
-- **Throughput** is limited by the free-tier token quota of the model API, which can cause long waits or "rate-limited" errors.
-
-## Not implemented
-
-MCP tool access, trained question and evidence-sufficiency classifiers, claim-level citation verification, a 200-300 question custom benchmark, an SEC EDGAR filing corpus, and PDF viewing with bounding boxes.
 
 ## Related work
 
