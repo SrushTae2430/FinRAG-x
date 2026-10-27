@@ -1,0 +1,1398 @@
+id,question,gold,A_correct,A_answer,B_correct,B_answer,B_ctx_hit,C_correct,C_answer,D_raw_correct,D_refused,D_correct,D_ctx_hit,D_calc_correct,D_calc_error,D_checks,D_program,D_coverage,D_answer,D_new_released,D_new_correct
+finqa_dev_512,"What was the average operating profit for Lockheed Martin's Aeronautics segment between 2014 and 2016, based on the provided financial data?",1739.0,False,"I’m sorry, but I don’t have the specific operating‑profit figures for Lockheed Martin’s Aeronautics segment for 2014, 2015, and 2016 in the information you provided. Without those numbers I can’t calculate an accurate average. If you can supply the three annual operating‑profit amounts, I’ll gladly compute the average for you.",False,INSUFFICIENT EVIDENCE,True,True,Average operating profit (2014‑2016) = (1887 + 1681 + 1649) ÷ 3 = 1739.00 million【D2379_C4】,True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""average"", ""args"": [1649, 1681, 1887]}], ""percent"": false}",100,"The average operating profit for Lockheed Martin’s Aeronautics segment between 2014 and 2016 was **$1,739.00**. [D2379_C4]",True,True
+finqa_dev_835,"What is the annual interest expense related to the '2022 notes' issued by BlackRock in 2012, as disclosed in the company's 2013 financial report, in millions?",25.3125,False,"**Annual interest expense on the 2022 notes issued by BlackRock in 2012 (as disclosed in the 2013 financial report):** **$1,200 million**",True,The annual interest expense related to the 2022 notes issued by BlackRock in 2012 is **$25 million** per year. [D1506_C7],True,True,"The annual interest expense related to the 2022 notes issued by BlackRock in 2012, as disclosed in the company’s 2013 financial report, is **$25 million per year**. [D2195_C3]",True,False,True,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}",,100,"The annual interest expense related to the 2022 notes issued by BlackRock in 2012, as disclosed in the company’s 2013 financial report, is **$25 million per year**. [D2195_C3]",True,True
+finqa_dev_290,"What was the percentage change in AES Corporation's proportional free cash flow between 2013 and 2014, as reported in the 2015 financial report?",-0.2989771833202203,False,"**Step‑by‑step calculation**
+
+| Year | Proportional Free Cash Flow (reported in the 2015 financial report) |
+|------|---------------------------------------------------------------------|
+| 2013 | \$1,200 million |
+| 2014 | \$1,500 million |
+
+1. **Compute the change in free cash flow**  
+   \[
+   \Delta = 1{,}500 \text{ M} - 1{,}200 \text{ M} = 300 \text{ M}
+   \]
+
+2. **Divide by the 2013 value to get the relative change**  
+   \[
+   \frac{300}{1{,}200} = 0.25
+   \]
+
+3. **Convert to a percentage**  
+   \[
+   0.25 \times 100\% = 25\%
+   \]
+
+**Answer**
+
+The percentage change in AES Corporation’s",False,"The 2015 financial report shows a 2014/2013 change of –$924 million in proportional free cash flow.  
+2013 proportional free cash flow was $1,881 million.  
+
+\[
+\text{Percentage change} = \frac{-924}{1,881}\times100 = -49.15\%
+\]
+
+**Answer: –49.15 %** [D2204_C4]",True,False,INSUFFICIENT EVIDENCE,True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [891.0, 1271.0]}, {""op"": ""divide"", ""args"": [""#0"", 1271.0]}], ""percent"": true}",100,"The proportional free cash flow changed from $1,271 million in 2013 to $891 million in 2014, a percentage change of -29.90% [D2204_C4].",True,True
+finqa_dev_816,"What portion of the $226 million in tax benefits that, if recognized as of December 31, 2011, would affect the effective tax rate of BlackRock?",0.6475644699140402,False,"The entire **$226 million** of tax benefits would be the portion that, if recognized as of December 31, 2011, would affect BlackRock’s effective tax rate.",False,"$226 million of the unrecognized tax benefits would affect BlackRock’s effective tax rate as of December 31, 2011. [D2289_C4]",True,False,100% [D2289_C4],False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}",,100,100% [D2289_C4],True,False
+finqa_dev_498,"What was the decline in the benchmark price of WTI crude oil per barrel between its peak on July 3, 2008, and its low on December 19, 2008, as experienced by Marathon Oil during that year?",111.42,True,"**Decline in WTI benchmark price (Marathon Oil’s reference)**  
+
+| Date | WTI price per barrel |
+|------|----------------------|
+| Peak – July 3 2008 | **$147.05** |
+| Low – December 19 2008 | **$34.70** |
+
+**Step‑by‑step calculation**
+
+1. Subtract the low price from the peak price:  
+   \(147.05 - 34.70 = 112.35\)
+
+2. The result is the decline in the benchmark price.
+
+**Final value**
+
+The benchmark price of WTI crude oil fell by **$112.35 per barrel** between its peak on July 3, 2008 and its low on December 19, 2008.",True,"The decline in the benchmark price of WTI crude oil per barrel between its peak on July 3, 2008 ($145.29) and its low on December 19, 2008 ($33.87) was $111.42 per barrel. [D2295_C5]",True,True,"The decline in the benchmark price of WTI crude oil per barrel between its peak on July 3, 2008 ($145.29) and its low on December 19, 2008 ($33.87) was $111.42 per barrel. [D2295_C5]",True,False,True,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}",,80,"The decline in the benchmark price of WTI crude oil per barrel between its peak on July 3, 2008 ($145.29) and its low on December 19, 2008 ($33.87) was $111.42 per barrel. [D2295_C5]",True,True
+finqa_dev_199,"What percentage of Union Pacific Corporation's total cash capital investments for the year ended December 31, 2006, was allocated to track investments?",0.6632471008028545,False,"**Step‑by‑step calculation**
+
+1. **Find the figures from the 2006 annual report (Form 10‑K) of Union Pacific Corporation**  
+   * Total cash capital investments for the year ended December 31, 2006: **$1,500 million**  
+   * Cash capital investments specifically for track (railway) infrastructure: **$1,200 million**
+
+2. **Compute the percentage**  
+   \[
+   \text{Percentage} = \frac{\text{Track investments}}{\text{Total cash capital investments}} \times 100
+   \]
+   \[
+   = \frac{1{,}200}{1{,}500} \times 100
+   = 0.80 \times 100
+   = 80\%
+   \]
+
+**Answer**
+
+Approximately **80 %** of Union Paci",False,INSUFFICIENT EVIDENCE,True,False,"The track investments were $1,487 million out of a total cash capital investment of $2,200 million for 2006.  
+\[
+\frac{1{,}487}{2{,}200}\times100\% \approx 67.5\%
+\]  
+**Answer: 67.5 %** [D2269_C1][D623_C5]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [1487, 2242]}], ""percent"": true}",100,"The track investments represented **66.32 %** of Union Pacific Corporation’s total cash capital investments for the year ended December 31, 2006. [D2269_C1]",True,True
+finqa_dev_36,"What is the percentage change in Philip Morris International's total debt from December 31, 2014, to December 31, 2015, based on the debt values of $29.5 billion and $28.5 billion, respectively?",-0.0338983050847457,True,"**Percentage change in total debt**
+
+\[
+\text{Change} = \frac{28.5\text{ B} - 29.5\text{ B}}{29.5\text{ B}}
+              = \frac{-1.0\text{ B}}{29.5\text{ B}}
+              = -0.0339 \text{ (approximately)}
+\]
+
+\[
+\text{Percentage change} = -3.39\%
+\]
+
+**Answer:** The total debt decreased by **about 3.4 %** from December 31, 2014 to December 31, 2015.",False,INSUFFICIENT EVIDENCE,True,True,"The total debt decreased from $29.5 billion on December 31, 2014 to $28.5 billion on December 31, 2015.  
+Change = (28.5 – 29.5) ÷ 29.5 = –1 ÷ 29.5 ≈ –0.0339, or –3.39 % [D2145_C8]  
+
+**Percentage change:** –3.39 %",False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""inputs_grounded"": true, ""result_in_answer"": false}","{""steps"": [{""op"": ""subtract"", ""args"": [29.5, 28.5]}, {""op"": ""divide"", ""args"": [""#0"", 29.5]}], ""percent"": true}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_222,"What is the difference in payments, in millions, between Entergy Arkansas and Entergy New Orleans, as shown in the updated compliance filing with the FERC in April and May 2014?",66.0,False,"**Answer**
+
+The updated compliance filing with the Federal Energy Regulatory Commission (FERC) in April and May 2014 shows that:
+
+- **Entergy Arkansas** reported a payment of **$1.2 million**.  
+- **Entergy New Orleans** reported a payment of **$0.8 million**.
+
+**Difference in payments**
+
+\[
+1.2\ \text{million} \;-\; 0.8\ \text{million} \;=\; 0.4\ \text{million}
+\]
+
+**Final value:** The difference in payments between Entergy Arkansas and Entergy New Orleans is **$0.4 million**.",False,INSUFFICIENT EVIDENCE,False,False,INSUFFICIENT EVIDENCE,False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [2, -1]}], ""percent"": false}",100,The difference in payments between Entergy Arkansas and Entergy New Orleans is **$3.00 million**【D2137_C1】,True,False
+finqa_dev_718,"In the 2017 financial report of Global Payments, what is the total amount that can be deducted for income tax purposes, considering the acquisition and the estimated amortization periods of the customer-related intangible assets, acquired technology, and trade name?",73576.0,False,"**Answer**
+
+In Global Payments’ 2017 annual report, the company reports the following customer‑related intangible assets that were acquired during the year:
+
+| Item | Purchase price (USD) | Amortization period | Annual amortization expense | Deductible amount for income‑tax purposes |
+|------|----------------------|---------------------|-----------------------------|------------------------------------------|
+| Customer‑related intangible assets | 1,200,000 | 10 years | 120,000 | **120,000** |
+| Acquired technology | 800,000 | 5 years | 160,000 | **160,000** |
+| Trade name | 400,000 | 5 years ",False,INSUFFICIENT EVIDENCE,True,True,"The total amount that can be deducted for income‑tax purposes is the sum of the customer‑related intangible assets, the acquired technology, and the trade name:
+
+- Customer‑related intangible assets: $42,721 k  
+- Acquired technology: $27,954 k  
+- Trade name: $2,901 k  
+
+Total deductible amount = $42,721 k + $27,954 k + $2,901 k = **$73,576 k** (≈ $73.58 million) [D2252_C1]",True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}","{""steps"": [], ""percent"": false}",75,"The total amount that can be deducted for income‑tax purposes is the sum of the customer‑related intangible assets, the acquired technology, and the trade name:
+
+- Customer‑related intangible assets: $42,721 k  
+- Acquired technology: $27,954 k  
+- Trade name: $2,901 k  
+
+Total deductible amount = $42,721 k + $27,954 k + $2,901 k = **$73,576 k** (≈ $73.58 million) [D2252_C1]",False,False
+finqa_dev_129,What is the difference between the highest and average operating margin in the HR solutions segment of Aon's 2014 report?,0.0253333333333333,False,"I’m sorry, but I don’t have the specific operating‑margin figures for Aon’s HR‑solutions segment from the 2014 report. Without those numbers I can’t calculate the difference between the highest and average operating margin. If you can provide the two values (or a source that lists them), I’ll be happy to do the calculation for you.",True,"The highest operating margin in the HR solutions segment in 2014 was **11.4 %**.  
+The average operating margin over 2012‑2014 was **8.87 %**.  
+The difference between the highest and the average is **2.53 %**. [D2226_C2]",True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_248,"What is the ratio of the deferred tax assets for the state income tax credit carry-forwards to the net operating loss carry-forward as of December 31, 2017, for Huntington Ingalls Industries?",5.333333333333333,False,"**Answer**
+
+The ratio of Huntington Ingalls Industries’ deferred tax assets for state‑income‑tax‑credit carry‑forwards to its net‑operating‑loss (NOL) carry‑forward, as reported on the balance sheet for the year ended December 31, 2017, is:
+
+\[
+\boxed{0.82}
+\]
+
+---
+
+### How the ratio was calculated
+
+| Item | 2017 Balance (USD million) | Source |
+|------|---------------------------|--------|
+| Deferred tax assets – state income‑tax‑credit carry‑forwards | **$1,240 million** | 2017 Form 10‑K, Balance Sheet |
+| Net operating loss carry‑forward | **$1,510 million** | 2017 Form 10‑K, Balance Sheet ",True,"The ratio of the deferred tax assets for the state income tax credit carry‑forwards to the deferred tax assets for the net operating loss carry‑forward is:
+
+\[
+\frac{16\text{ million}}{3\text{ million}} \approx 5.33
+\]
+
+**Final value:** 5.33. [D2255_C0]",True,False,"The ratio of the deferred tax assets for the state income tax credit carry‑forwards to the deferred tax assets for the net operating loss carry‑forward is:
+
+\[
+\frac{16\text{ million}}{3\text{ million}} \approx 5.33
+\]
+
+[ D2255_C0 ]",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,"The ratio of the deferred tax assets for the state income tax credit carry‑forwards to the deferred tax assets for the net operating loss carry‑forward is:
+
+\[
+\frac{16\text{ million}}{3\text{ million}} \approx 5.33
+\]
+
+[ D2255_C0 ]",True,False
+finqa_dev_724,What was the percent change in the weighted average cost per share of Republic Services' stock repurchases from 2016 to 2017?,0.314662273476112,False,"**Step‑by‑step calculation**
+
+| Year | Weighted‑average cost per share of stock repurchases |
+|------|------------------------------------------------------|
+| 2016 | **$28.50** |
+| 2017 | **$30.50** |
+
+1. **Compute the difference**  
+   \(30.50 - 28.50 = 2.00\)
+
+2. **Divide by the 2016 value**  
+   \(\dfrac{2.00}{28.50} = 0.07018\)
+
+3. **Convert to a percentage**  
+   \(0.07018 \times 100 = 7.02\%\)
+
+**Answer**
+
+The weighted average cost per share of Republic Services’ stock repurchases increased by **about 7 %** from 2016 to 2017.",True,"The weighted average cost per share rose from $48.56 in 2016 to $63.84 in 2017.  
+Percent change = \(\frac{63.84-48.56}{48.56}\times100\% = 31.48\%\) [D2374_C1]  
+
+**Final value:** 31.48 % (rounded to two decimal places).",True,True,"The weighted average cost per share rose from $48.56 in 2016 to $63.84 in 2017.  
+Percent change = \(\frac{63.84-48.56}{48.56}\times100\% = 31.50\%\)【D2374_C1】.",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [63.84, 48.56]}, {""op"": ""divide"", ""args"": [""#0"", 48.56]}], ""percent"": true}",100,"The weighted average cost per share rose from $48.56 in 2016 to $63.84 in 2017, a percent increase of 31.47 %【D2374_C1】.",True,True
+finqa_dev_682,"as of december 31, 2012, what was the outstanding amount of share repurchase authorized, in billions, under the $8 billion share repurchase program approved by the Schlumberger board of directors?",0.8799999999999999,False,"**Outstanding amount of share‑repurchase authorized (as of December 31 2012)**  
+≈ **$5.5 billion** (rounded to the nearest tenth of a billion).",True,Outstanding authorized amount remaining under the $8 billion share‑repurchase program as of December 31 2012 was **$0.88 billion** (8 billion – 7.12 billion repurchased) [D2170_C1].,True,True,Outstanding authorized amount = $0.88 billion【D2170_C1】,True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}",,0,Outstanding authorized amount = $0.88 billion【D2170_C1】,False,False
+finqa_dev_539,"What was the percentage change in the value of interest retained by Union Pacific Receivables, Inc. (UPRI) from 2007 to 2008, given that the values were $471 million and $431 million, respectively?",-0.0849256900212314,True,"**Percentage change in interest retained by UPRI (2007 → 2008)**  
+
+\[
+\text{Change} = \frac{431\text{ million} - 471\text{ million}}{471\text{ million}}
+              = \frac{-40}{471}
+              \approx -0.08496
+\]
+
+\[
+\text{Percentage change} \approx -8.5\%
+\]
+
+**Answer:** The value of interest retained by Union Pacific Receivables, Inc. decreased by **about 8.5 %** from 2007 to 2008.",True,"The value of interest retained by Union Pacific Receivables, Inc. (UPRI) decreased from $471 million in 2007 to $431 million in 2008.  
+Percentage change = \(\frac{431-471}{471}\times100\% = -8.50\%\) [D2384_C4]",True,True,"The value of the interest retained by UPRI decreased from $471 million in 2007 to $431 million in 2008.  
+Percentage change = \(\frac{431-471}{471}\times100\% = -8.49\%\) [D2384_C4]",True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}","{""steps"": [], ""percent"": false}",83,"The value of the interest retained by UPRI decreased from $471 million in 2007 to $431 million in 2008.  
+Percentage change = \(\frac{431-471}{471}\times100\% = -8.49\%\) [D2384_C4]",False,False
+finqa_dev_502,"What was the net change in cash for The Interpublic Group of Companies in the year 2015, considering the cash flow data provided in the 2019 management's discussion and analysis of financial condition and results of operations?",-1.6000000000000227,False,"**Net change in cash for The Interpublic Group of Companies (IPG) in 2015**
+
+| Item | 2015 | 2014 (for comparison) |
+|------|------|-----------------------|
+| Net change in cash and cash equivalents | **$‑1,200 million** | $‑1,100 million |
+
+**Explanation**
+
+The 2019 Management’s Discussion and Analysis (MD&A) of IPG’s financial condition and results of operations includes a consolidated statement of cash flows for the year ended December 31, 2015. In that statement:
+
+1. **Operating activities** generated a net cash inflow of **$1,500 million**.
+2. **Investing activities** used cash of **$2,20",False,INSUFFICIENT EVIDENCE,True,False,"Net change in cash for The Interpublic Group of Companies in 2015  
+= Net cash provided by operating activities – Net cash used in working capital – Net cash used in investing activities  
+= $674.0 M – $117.5 M – $202.8 M  
+= **$353.7 million** [D2241_C1]",False,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}","{""steps"": [], ""percent"": false}",75,"Net change in cash for The Interpublic Group of Companies in 2015  
+= Net cash provided by operating activities – Net cash used in working capital – Net cash used in investing activities  
+= $674.0 M – $117.5 M – $202.8 M  
+= **$353.7 million** [D2241_C1]",False,False
+finqa_dev_633,"What is the difference between the total fair value and the total carrying value of BlackRock's long-term borrowings as of December 31, 2013?",345.0,False,"**Answer**
+
+The difference between the **total fair value** and the **total carrying value** of BlackRock’s long‑term borrowings as of December 31, 2013 is **US $200 million** (fair value is higher).
+
+---
+
+### How the figure was obtained
+
+| Item | Amount (US $ millions) |
+|------|------------------------|
+| **Total carrying value of long‑term borrowings** (balance sheet, 12/31/2013) | 1,400 |
+| **Total fair value of long‑term borrowings** (disclosed in the notes to the financial statements, 12/31/2013) | 1,600 |
+| **Difference (fair value – carrying value)** | 1,600 – 1,400 = **200** |
+
+**Roun",False,INSUFFICIENT EVIDENCE,True,False,"The difference between the total fair value and the total carrying value of BlackRock’s long‑term borrowings as of December 31, 2013 is:
+
+**$0.35 billion** (fair value $5.284 billion minus carrying value $4.939 billion) [D2221_C5]",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,"The difference between the total fair value and the total carrying value of BlackRock’s long‑term borrowings as of December 31, 2013 is:
+
+**$0.35 billion** (fair value $5.284 billion minus carrying value $4.939 billion) [D2221_C5]",True,False
+finqa_dev_723,"What was the change in expenses for defined contribution plans for U.S. employees of Zimmer Biomet between 2016 and 2017, in millions?",5.399999999999999,False,"I’m sorry, but I don’t have the specific financial figures for Zimmer Biomet’s defined‑contribution plan expenses for 2016 and 2017. You can find the exact numbers in the company’s Form 10‑K filings for those years (look under “Employee Benefit Plans” or “Other Operating Expenses”). Once you have the two amounts, simply subtract the 2016 figure from the 2017 figure to get the change in millions.",False,INSUFFICIENT EVIDENCE,False,True,The expense for defined contribution plans increased by **$5.4 million** from 2016 to 2017. [D2312_C2],True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}","{""steps"": [], ""percent"": false}",0,The expense for defined contribution plans increased by **$5.4 million** from 2016 to 2017. [D2312_C2],False,False
+finqa_dev_635,"What were the average net sales for Lockheed Martin's Aeronautics segment between 2014 and 2016, according to the 2016 report?",16086.333333333334,False,"**Average net sales for Lockheed Martin’s Aeronautics segment (2014‑2016)**  
+
+| Year | Net sales (USD million) |
+|------|------------------------|
+| 2014 | 12,000 |
+| 2015 | 12,500 |
+| 2016 | 12,800 |
+
+**Step‑by‑step calculation**
+
+1. Add the three years’ net sales:  
+   \(12,000 + 12,500 + 12,800 = 37,300\) million.
+2. Divide by the number of years (3):  
+   \(37,300 ÷ 3 = 12,433.33\) million.
+
+**Result**
+
+The average net sales for Lockheed Martin’s Aeronautics segment between 2014 and 2016 were **approximately USD 12.4 billion** (rounded to the nearest hundred million).",False,INSUFFICIENT EVIDENCE,True,True,"Average net sales for Lockheed Martin’s Aeronautics segment (2014‑2016): **$16,086.33 million**【D2379_C4】",True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}","{""steps"": [], ""percent"": false}",0,"Average net sales for Lockheed Martin’s Aeronautics segment (2014‑2016): **$16,086.33 million**【D2379_C4】",True,True
+finqa_dev_433,"As of December 31, 2018, what percentage of the $2.5 billion authorized for the 2018 stock repurchase program remained outstanding?",0.8800000000000001,False,"**Answer**
+
+As of December 31, 2018, **60 %** of the $2.5 billion authorized for the 2018 stock‑repurchase program remained outstanding.",False,"The remaining authorized purchase capacity as of December 31, 2018 was $1.1 billion out of the $2.5 billion authorized for the 2018 stock repurchase program.  
+\( \frac{1.1}{2.5} \times 100 = 44\% \)  
+
+**Final value:** 44%【D680_C2】",False,False,"The 2018 stock repurchase program authorized $2.5 billion. As of December 31, 2018, the company had approval to purchase approximately $2.2 billion, leaving $0.3 billion of the authorization unused.  
+Percentage remaining = \(0.3 ÷ 2.5 = 0.12\) → **12 %**. [D2046_C3]",False,True,False,False,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": false, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [256, 2500]}], ""percent"": true}",100,10.24%【D2046_C1】,True,False
+finqa_dev_371,"What is the total difference, in millions, between the impact of a 10% increase and a 10% decrease in interest rates on the fair market value of debt for Interpublic Group of Companies as of December 31, 2015?",68.4,False,"I’m sorry, but I don’t have the specific fair‑market‑value figures for Interpublic Group’s debt as of December 31 2015, nor the detailed impact of a 10 % change in interest rates on those values. Without those numbers I can’t calculate the total difference in millions. If you can provide the relevant amounts (e.g., the change in fair value for a 10 % rate increase and for a 10 % rate decrease), I’d be happy to do the calculation for you.",False,INSUFFICIENT EVIDENCE,True,True,"The fair‑market‑value impact of a 10 % increase in interest rates is a decrease of $33.7 million, while a 10 % decrease in rates is an increase of $34.7 million.  
+The total difference between these two impacts is:
+
+$34.7 \text{M} - (-$33.7 \text{M}) = $68.4 million.  
+
+**Answer: 68.4 million** [D2287_C2]",True,False,True,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [-33.7, 34.7]}], ""percent"": false}",100,The total difference is $68.40 million. [D2287_C2],True,True
+finqa_dev_110,"In the 2008 financial report of Union Pacific Corporation, what percentage of the total operating revenues was attributed to other revenues, which include revenues from subsidiaries, commuter rail operations, and accessorial services?",0.0474123539232053,False,"In the 2008 Union Pacific Corporation annual report, **other revenues** (which comprise revenues from subsidiaries, commuter‑rail operations, and accessorial services) represented **approximately 4.5 % of the company’s total operating revenues**.",False,INSUFFICIENT EVIDENCE,True,True,Other revenues represented 4.74 % of total operating revenues in 2008. [D2211_C1],True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [852, 17970]}], ""percent"": true}",100,Other revenues represented approximately **4.74 %** of Union Pacific Corporation’s total operating revenues in 2008. [D2211_C1],True,True
+finqa_dev_252,"As of December 31, 2013, what percentage of Ansys' total contractual obligations was attributed to its global headquarters operating leases, considering the lease agreement for the new headquarters in Canonsburg, Pennsylvania, which was entered into on September 14, 2012, and the existing headquarters lease expiring on December 31, 2014?",0.473165669215069,False,"I’m sorry, but I don’t have the specific lease‑balance figures or the total contractual‑obligation amount for Ansys as of December 31 , 2013. Without those numbers I can’t calculate the percentage of the company’s total contractual obligations that were attributable to its global‑headquarters operating leases. If you can provide the lease‑balance amounts (or the company’s total contractual‑obligation figure) I’d be happy to work through the calculation step by step.",False,INSUFFICIENT EVIDENCE,True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""inputs_grounded"": false, ""result_in_answer"": false}","{""steps"": [{""op"": ""divide"", ""args"": [8556, 25218]}], ""percent"": true}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_24,"What is the percent change in annual long-term debt maturities for Entergy Corporation from 2016 to 2017, as reported in the notes to the financial statements for the year 2015?",2.7556583479926893,False,"**Answer**
+
+The notes to Entergy Corporation’s 2015 financial statements report the following amounts for annual long‑term debt maturities:
+
+| Year | Long‑term debt maturities (USD millions) |
+|------|------------------------------------------|
+| 2016 | **$1,200** |
+| 2017 | **$1,400** |
+
+**Step‑by‑step calculation of percent change**
+
+1. **Determine the change in amount**  
+   \[
+   \text{Change} = 1{,}400 \text{ million} - 1{,}200 \text{ million} = 200 \text{ million}
+   \]
+
+2. **Divide by the 2016 amount**  
+   \[
+   \frac{200}{1{,}200} = 0.1667
+   \]
+
+3. **Convert to a percentage**  
+   \[",False,INSUFFICIENT EVIDENCE,False,False,INSUFFICIENT EVIDENCE,False,True,False,False,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_528,"What percentage of Abiomed, Inc.'s total contractual obligations, as listed in the table at March 31, 2007, are due within the next fiscal year?",0.594819020581973,False,"I’m sorry, but I don’t have access to the specific table of Abiomed, Inc.’s contractual obligations as of March 31 2007. Without the exact figures for the total contractual obligations and the portion that is due within the next fiscal year, I can’t calculate the percentage. If you can provide those numbers, I’ll be happy to work through the calculation step by step.",True,"The table for March 31, 2007 lists total contractual obligations of **$14,090 000** and payments due within the next fiscal year (less than 1 year) of **$8,381 000**.  
+Percentage due within the next fiscal year = \(\frac{8,381}{14,090}\times100\% \approx 59.5\%\) [D2381_C1].  
+
+**Answer: 59.5 %**",True,True,"The percentage of Abiomed, Inc.’s total contractual obligations that are due within the next fiscal year is **59.47%** [D2381_C1].",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [8381, 14090]}], ""percent"": true}",100,"The percentage of Abiomed, Inc.’s total contractual obligations that are due within the next fiscal year is **59.48 %**【D2381_C1】",True,True
+finqa_dev_564,"What was the percentage increase in the average price per share of Schlumberger's stock from 2010 to 2011, as reflected in the share repurchase program summary table?",0.258529776674938,False,"I’m sorry, but I don’t have access to the specific share‑repurchase program summary table you’re referring to, so I can’t calculate the exact percentage increase in Schlumberger’s average share price between 2010 and 2011. If you can provide the average prices for those years, I’d be happy to walk through the calculation for you.",False,INSUFFICIENT EVIDENCE,True,True,"The average price paid per share rose from $64.48 in 2010 to $81.15 in 2011.  
+Percentage increase = \(\frac{81.15-64.48}{64.48}\times100\approx25.87\%\)【D2170_C2】.  
+
+**Final value:** 25.87%",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [81.15, 64.48]}, {""op"": ""divide"", ""args"": [""#0"", 64.48]}], ""percent"": true}",100,"The average price per share rose from $64.48 in 2010 to $81.15 in 2011, a percentage increase of **25.85 %**【D2170_C2】",True,True
+finqa_dev_423,"What percentage of Entergy's total workforce, as of December 31, 2008, is comprised of employees working for Entergy Mississippi?",0.0564455654782193,False,"**Step 1 – Gather the numbers**
+
+| Source | Total Entergy workforce (Dec 31 2008) | Entergy Mississippi workforce (Dec 31 2008) |
+|--------|--------------------------------------|---------------------------------------------|
+| Entergy 2008 Annual Report (Form 10‑K) | **11,900** employees | **2,000** employees |
+
+*(The figures are taken from the “Employees” section of the 2008 Form 10‑K, which lists the total number of employees for the entire Entergy Corporation and the number of employees for each operating subsidiary.)*
+
+---
+
+**Step 2 – Compute the percentage**
+
+\[
+\text{Percentage} = \frac",False,INSUFFICIENT EVIDENCE,False,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": false}","{""steps"": [{""op"": ""divide"", ""args"": [793, 14235]}], ""percent"": true}",0,The percentage of Entergy’s total workforce that is comprised of employees working for Entergy Mississippi is **5.50 %** [D259_C3].,False,False
+finqa_dev_303,"What is the net change in shares of common stock outstanding from 2013 to 2014 for Morgan Stanley, as reported in the 2014 consolidated financial statements?",6.0,False,"**Net change in Morgan Stanley’s common‑stock shares outstanding (2013 → 2014)**  
+
+| Year | Shares outstanding (millions) | Change (millions) |
+|------|------------------------------|-------------------|
+| 2013 | 1,500.0 | – |
+| 2014 | 1,520.0 | **+20.0** |
+
+**Answer:** The net change in shares of common stock outstanding from 2013 to 2014 was an **increase of 20 million shares**.",True,Net change in shares of common stock outstanding from 2013 to 2014: **+6 million shares** [D2318_C2],True,True,Net change in shares of common stock outstanding from 2013 to 2014: **+6 million shares**【D2318_C2】,False,True,False,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": false}","{""steps"": [{""op"": ""subtract"", ""args"": [1951, 1945]}], ""percent"": false}",100,The net change in shares of common stock outstanding from 2013 to 2014 for Morgan Stanley was a decrease of **23 shares** (1951 – 1974 = ‑23). [D2318_C2],False,False
+finqa_dev_677,"What percentage of the home equity lines of credit interest-only product due in 2012 was attributed to home equity lines of credit with balloon payments, according to the PNC Financial Services' 2011 report?",0.3384955752212389,False,"I’m sorry, but I don’t have access to the specific figures from PNC Financial Services’ 2011 report, so I can’t provide the exact percentage you’re asking for.",False,INSUFFICIENT EVIDENCE,True,True,"The interest‑only home equity lines of credit due in 2012 totaled $904 million, of which $306 million were home equity lines of credit with balloon payments.  
+Percentage attributed to balloon payments:  
+
+\[
+\frac{306}{904}\times100 \approx 33.9\%
+\]
+
+**Answer: 33.9 %** [D2292_C2]",True,False,True,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,"The interest‑only home equity lines of credit due in 2012 totaled $904 million, of which $306 million were home equity lines of credit with balloon payments.  
+Percentage attributed to balloon payments:  
+
+\[
+\frac{306}{904}\times100 \approx 33.9\%
+\]
+
+**Answer: 33.9 %** [D2292_C2]",True,True
+finqa_dev_153,"As of December 31, 2005, what was the ratio of the breast implant receivables to the breast implant liabilities for 3M, as reflected in the company's estimation of probable liabilities and related insurance receivables?",18.571428571428573,False,"**Answer**
+
+As of **December 31, 2005**, 3M’s own estimates of the probable liabilities related to breast‑implant lawsuits were **$1,500 million** (US$1.5 billion).  
+The company’s related insurance‑receivable balance (the amount it expected to recover from insurers) was **$1,200 million** (US$1.2 billion).
+
+The ratio of **breast‑implant receivables to breast‑implant liabilities** is therefore:
+
+\[
+\text{Ratio} = \frac{\text{Receivables}}{\text{Liabilities}}
+              = \frac{1{,}200}{1{,}500}
+              = 0.80
+\]
+
+**Final value:** **0.80** (i.e., the receivables were 80 % of the estima",False,"The ratio of breast implant receivables to breast implant liabilities for 3M as of December 31, 2005 is:
+
+\[
+\frac{130\text{ million}}{7\text{ million}} \approx 18.57
+\]
+
+[ D2246_C1 ]",True,False,"The ratio of breast‑implant receivables to breast‑implant liabilities as of December 31, 2005 was:
+
+\[
+\frac{130\text{ million}}{7\text{ million}} \approx 18.57
+\]
+
+[ D2246_C1 ]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [130, 7]}], ""percent"": false}",100,"The ratio of breast implant receivables to breast implant liabilities for 3M as of December 31, 2005 was **18.57** [D2246_C1].",True,True
+finqa_dev_313,"If JPMorgan Chase had excluded the commercial banking segment from its operations in 2005, what would have been the resulting operating income in US$ millions, based on the segment results provided in the 2005 annual report?",9514.0,False,"I’m sorry, but I don’t have access to the specific segment figures from JPMorgan Chase’s 2005 annual report, so I can’t calculate the exact operating income that would result if the commercial banking segment had been excluded.",False,"The 2005 operating earnings for the segments listed in the annual report are:
+
+- Investment bank: $3,658 million  
+- Retail financial services: $3,427 million  
+- Card services: $1,907 million  
+- Commercial banking: $1,007 million  
+- Treasury & securities services: $1,037 million  
+
+Adding the five segments gives a total operating income of  
+$3,658 + 3,427 + 1,907 + 1,007 + 1,037 = $11,136 million.  
+
+If the commercial banking segment were excluded, the operating income would be  
+$11,136 million – $1,007 million = $10,129 million.  
+
+**Result:** $10,129 million. [D2220_C1]",True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}",,100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_370,"What was the ratio of Citigroup's Tier 2 capital at December 31, 2008, compared to the Tier 2 capital at December 31, 2007?",0.9444444444444448,False,"**Step‑by‑step calculation**
+
+| Date | Citigroup Tier 2 Capital (US $ billions) |
+|------|------------------------------------------|
+| 31 Dec 2008 | **$5.5 billion** |
+| 31 Dec 2007 | **$7.5 billion** |
+
+1. **Divide the 2008 amount by the 2007 amount**  
+   \[
+   \frac{5.5}{7.5}=0.7333\ldots
+   \]
+
+2. **Round sensibly** – two decimal places are typical for a ratio.  
+   \[
+   0.7333 \;\approx\; 0.73
+   \]
+
+**Answer**
+
+The ratio of Citigroup’s Tier 2 capital at December 31, 2008 to that at December 31, 2007 was **approximately 0.73** (i.e., the 2008 Tier 2 capital was about 73 % of the 2007 le",True,"The Tier 2 capital at December 31, 2008 was about 94 % of the Tier 2 capital at December 31, 2007.  
+
+**Calculation**  
+- Tier 2 (2008) = Total capital – Tier 1 = 108.4 – 71.0 = 37.4 billion  
+- Tier 2 (2007) = 121.6 – 82.0 = 39.6 billion  
+- Ratio = 37.4 ÷ 39.6 ≈ 0.9449 ≈ 0.94 [D2202_C5]",True,True,"Tier 2 capital at December 31 2008 was $37.4 billion, compared with $39.6 billion at December 31 2007.  
+The ratio of 2008 to 2007 Tier 2 capital is:
+
+\[
+\frac{37.4}{39.6}=0.9449\;\approx\;0.94
+\]
+
+**Final value:** 0.94 (rounded to two decimals). [D2202_C5]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [108.4, 71.0]}, {""op"": ""subtract"", ""args"": [121.6, 82.0]}, {""op"": ""divide"", ""args"": [""#0"", ""#1""]}], ""percent"": false}",100,"The ratio of Citigroup’s Tier 2 capital at December 31, 2008 to its Tier 2 capital at December 31, 2007 is **0.94** (rounded to two decimals). [D2202_C5]",True,True
+finqa_dev_765,"What was the change in the weighted-average number of shares used to calculate diluted earnings per share at Philip Morris International from 2015 to 2016, expressed in millions?",2.0,False,"**Change in the weighted‑average number of shares used for diluted EPS (Philip Morris International)**  
+
+| Year | Weighted‑average shares (millions) | Change from previous year (millions) |
+|------|------------------------------------|--------------------------------------|
+| 2015 | 1,000 M | – |
+| 2016 | 1,050 M | **+50 M** |
+
+**Answer:** The weighted‑average number of shares increased by **50 million** from 2015 to 2016.",False,INSUFFICIENT EVIDENCE,True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_737,"In Apple Inc.'s 2014 Form 10-K report, what year did the company have the highest amount of cash, cash equivalents, and marketable securities, as disclosed in the selected financial information and statistics table?",155239.0,False,"In Apple Inc.’s 2014 Form 10‑K, the “Selected Financial Information and Statistics” table lists the company’s cash, cash equivalents, and marketable securities for the three most recent fiscal years. The amounts were:
+
+| Fiscal year | Cash, cash equivalents, and marketable securities |
+|-------------|---------------------------------------------------|
+| 2014        | **$17.5 billion** |
+| 2013        | $12.5 billion |
+| 2012        | $10.5 billion |
+
+**Highest amount:** **2014** – $17.5 billion.",False,INSUFFICIENT EVIDENCE,True,True,"The highest amount of cash, cash equivalents, and marketable securities was reported for the year **2014** at **$155,239 million**【D2148_C5】.",True,False,True,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}",,100,"The highest amount of cash, cash equivalents, and marketable securities was reported for the year **2014** at **$155,239 million**【D2148_C5】.",True,True
+finqa_dev_92,"What is the return on investment (ROI) for the S&P 500 index from December 30, 2006, to January 3, 2009, given that the initial investment was $100 and the final value is as per the cumulative total return comparison graph provided in the 2011 report of Advance Auto Parts, Inc.?",-0.3429999999999999,False,"**Answer**
+
+The cumulative total‑return graph in the 2011 Advance Auto Parts, Inc. report shows that an investment of **$100** made on **December 30, 2006** would have grown to **$130** by **January 3, 2009**.
+
+1. **Calculate the profit**  
+   \[
+   \text{Profit} = \$130 - \$100 = \$30
+   \]
+
+2. **Compute the ROI**  
+   \[
+   \text{ROI} = \frac{\text{Profit}}{\text{Initial Investment}} = \frac{\$30}{\$100} = 0.30
+   \]
+
+3. **Express as a percentage**  
+   \[
+   0.30 \times 100\% = 30\%
+   \]
+
+**Return on Investment (ROI) = 30 %** (rounded to the nearest whole percent).",False,INSUFFICIENT EVIDENCE,True,True,"The S&P 500 index value on January 3 2009 was **$65.70** for an initial investment of **$100** on December 30 2006.  
+ROI = \((65.70 - 100) / 100 = -0.3430\) → **‑34.30 %**【D2196_C1】",False,False,False,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [65.7, 100.0]}, {""op"": ""divide"", ""args"": [""#0"", 100.0]}], ""percent"": true}",100,"The return on investment (ROI) for the S&P 500 index from December 30, 2006 to January 3, 2009 is **‑34.30 %**.  
+[ D2196_C1 ]",True,False
+finqa_dev_200,"What percentage of the total assets acquired by Constellation Brands in the Robert Mondavi acquisition is attributed to goodwill, based on the fair values at the date of acquisition?",0.3430766942104053,False,"**Step‑by‑step calculation**
+
+| Item | Fair value (USD) |
+|------|------------------|
+| Total assets acquired in the Robert Mondavi transaction | **$1,100 million** |
+| Goodwill recorded on the balance sheet | **$200 million** |
+
+1. **Compute the goodwill‑to‑assets ratio**  
+   \[
+   \text{Ratio} = \frac{\text{Goodwill}}{\text{Total assets}} = \frac{200}{1,100}
+   \]
+
+2. **Convert to a percentage**  
+   \[
+   \frac{200}{1,100} \times 100\% \approx 18.18\%
+   \]
+
+**Answer**
+
+Approximately **18 %** of the total assets acquired by Constellation Brands in the Robert Mondavi acquisition is attribut",False,INSUFFICIENT EVIDENCE,True,False,The goodwill represents approximately 31.03 % of the total assets acquired in the Robert Mondavi transaction. [D1015_C4],False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [590459, 1902972]}], ""percent"": true}",100,Goodwill represents approximately **31.03 %** of the total assets acquired in the Robert Mondavi acquisition. [D1015_C4],True,False
+finqa_dev_587,"What was the percentage change in the net favorable prior period development in Chubb Limited's property and casualty segments from 2008 to 2010, as reflected in the company's 2010 financial report?",-0.3820638820638821,False,"**Percentage change in net favorable prior‑period development (property & casualty)**  
+
+| Year | Net favorable prior‑period development (USD million) |
+|------|-----------------------------------------------------|
+| 2008 | **$5.2 million** |
+| 2010 | **$3.1 million** |
+
+**Step‑by‑step calculation**
+
+1. **Difference**  
+   \[
+   \Delta = 3.1\ \text{M} - 5.2\ \text{M} = -2.1\ \text{M}
+   \]
+
+2. **Percentage change relative to 2008**  
+   \[
+   \text{Percent change} = \frac{\Delta}{5.2\ \text{M}} \times 100
+   = \frac{-2.1}{5.2} \times 100
+   \approx -40.4\%
+   \]
+
+**Result**
+
+The net favorable",True,"The net favorable prior period development in Chubb Limited’s property and casualty segments decreased from $814 million in 2008 to $503 million in 2010.  
+Percentage change = \((503 - 814) / 814 \times 100\% = -38.2\%\) [D2391_C3]  
+
+**Final value:** –38.2 % (rounded to one decimal place).",True,True,"The net favorable prior period development in Chubb Limited’s property and casualty segments decreased from $814 million in 2008 to $503 million in 2010.  
+Percentage change = \(\frac{503-814}{814}\times100\% = -38.2\%\) [D2391_C3]",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [6.8, 4.6]}, {""op"": ""divide"", ""args"": [""#0"", 6.8]}], ""percent"": true}",100,"The net favorable prior period development decreased from 6.8 % in 2008 to 4.6 % in 2010, a decline of **‑32.35 %**. [D2391_C1]",True,False
+finqa_dev_582,"What was the change in total long-term debt net from 2014 to 2015 for Lockheed Martin, as reported in their 2015 financial statements, in millions?",9119.0,False,"**Change in Lockheed Martin’s total long‑term debt net (2014 → 2015)**  
+
+| Year | Long‑term debt net (millions) | Change from prior year |
+|------|------------------------------|------------------------|
+| 2014 | **$12,500 million** | – |
+| 2015 | **$12,000 million** | **–$500 million** |
+
+**Answer:** The total long‑term debt net decreased by **$500 million** from 2014 to 2015.",True,"The total long‑term debt net increased from $6,142 million in 2014 to $15,261 million in 2015, a change of **$9,119 million**. [D2345_C1]",True,True,"The change in total long‑term debt net from 2014 to 2015 was **$9,119 million**.  
+[ D2345_C1 ]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [15261, 6142]}], ""percent"": false}",100,"The total long‑term debt net increased by **$9,119 million** from 2014 to 2015.  
+[ D2345_C1 ]",True,True
+finqa_dev_715,"What percentage of the total special terminations, settlements, and curtailments value in 2016 does the pension settlement losses represent for Air Products?",0.8767123287671234,False,"**Step‑by‑step calculation**
+
+| Item | Value (USD million) |
+|------|---------------------|
+| Total special terminations, settlements, and curtailments (2016) | **$1,200 million** |
+| Pension settlement losses (2016) | **$120 million** |
+
+1. **Divide the pension settlement losses by the total value**  
+   \[
+   \frac{120}{1,200} = 0.10
+   \]
+
+2. **Convert to a percentage**  
+   \[
+   0.10 \times 100\% = 10\%
+   \]
+
+**Answer**
+
+The pension settlement losses represent **10 %** of the total special terminations, settlements, and curtailments value in 2016 for Air Products.",True,Pension settlement losses represent **87.67 %** of the total special items value in 2016. [D2212_C3],True,True,"Pension settlement losses represent approximately **87.7 %** of the total special terminations, settlements, and curtailments value in 2016. [D2212_C3]",True,False,True,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",0,"Pension settlement losses represent approximately **87.7 %** of the total special terminations, settlements, and curtailments value in 2016. [D2212_C3]",True,True
+finqa_dev_683,"What was the average propane sales in thousands of barrels per day for the three-year period from 2004 to 2006, according to Marathon Oil's refined product sales data?",22.33333333333333,False,"I’m sorry, but I don’t have access to Marathon Oil’s detailed refined‑product sales figures for 2004‑2006, so I can’t calculate the average propane sales for that period.",True,Average propane sales (thousands of barrels per day) for 2004‑2006: 22.33 [ D2182_C2 ],True,False,"Average propane sales (thousands of barrels per day) for 2004‑2006:  
+\[
+\frac{23+22+22}{3}=22.33
+\]  
+[ D2182_C2 ]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""add"", ""args"": [22, 22, 23]}, {""op"": ""divide"", ""args"": [""#0"", 3]}], ""percent"": false}",100,Average propane sales (thousands of barrels per day) for 2004‑2006: **22.33** [ D2182_C2 ],True,True
+finqa_dev_442,"What is the total cash outlay for Ball Corporation's common stock repurchases during the period from October 29 to November 25, 2007, as outlined in the common stock repurchases table?",20.7435887,False,"**Answer**
+
+The common‑stock repurchases table for Ball Corporation shows the following cash outlays for the period from **October 29 to November 25, 2007**:
+
+| Date | Cash Outlay (USD) |
+|------|-------------------|
+| Oct 29 2007 | $1,000,000 |
+| Nov 25 2007 | $1,500,000 |
+
+**Total cash outlay**  
+$1,000,000 + $1,500,000 = **$2,500,000**.
+
+So, Ball Corporation spent **$2.5 million** on common‑stock repurchases during that period.",False,INSUFFICIENT EVIDENCE,True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_842,"What was the percentage change in cash provided by operating activities for Union Pacific Corporation from 2013 to 2014, given that the cash provided by operating activities was $6,823 million in 2013 and $7,385 million in 2014?",0.0823684596218672,True,"**Percentage change in cash provided by operating activities (2013 → 2014)**  
+
+\[
+\text{Change} = \frac{7{,}385 - 6{,}823}{6{,}823} \times 100
+               = \frac{562}{6{,}823} \times 100
+               \approx 0.0824 \times 100
+               \approx 8.24\%
+\]
+
+**Answer:** The cash provided by operating activities increased by **about 8.2 %** from 2013 to 2014.",False,INSUFFICIENT EVIDENCE,True,True,"The percentage change in cash provided by operating activities from 2013 to 2014 is:
+
+\[
+\frac{7{,}385 - 6{,}823}{6{,}823} \times 100 \approx 8.24\%
+\]
+
+**Final value:** 8.24% [D2397_C1]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [7385, 6823]}, {""op"": ""divide"", ""args"": [""#0"", 6823]}], ""percent"": true}",100,The percentage change in cash provided by operating activities from 2013 to 2014 is **8.24 %** [D2397_C1].,True,True
+finqa_dev_233,"What percentage of Lockheed Martin's total commitment that expires in less than 1 year, as of December 31, 2005, is subject to renewal, according to the breakdown of commitment expiration by period?",0.9327835051546391,False,"According to Lockheed Martin’s 2005 annual report, the commitments that were set to expire in less than one year represented **about 5 % of the company’s total commitments**. Of those short‑term commitments, roughly **80 % were subject to renewal**.  
+
+To find the percentage of the **total commitments** that both expire in less than one year **and** are subject to renewal:
+
+\[
+\text{Percentage} = 5\% \times 80\% = 4\%
+\]
+
+**Answer: Approximately 4 % of Lockheed Martin’s total commitments that expire in less than one year are subject to renewal.**",False,INSUFFICIENT EVIDENCE,True,True,"The renewal amount for commitments expiring in less than 1 year is approximately $2,349 million (standby letters of credit $2,262 m + $49 m + surety bonds $38 m)【D2263_C3】.  
+The total commitments expiring in less than 1 year are $2,505 million (standby letters of credit $2,425 m + surety bonds $79 m + guarantees $1 m)【D2263_C2】.  
+
+Percentage subject to renewal = \( \frac{2,349}{2,505} \times 100 \approx 93.78\% \)【D2263_C3】【D2263_C2】.  
+
+**Final value:** 93.78 %",False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""inputs_grounded"": true, ""result_in_answer"": false}","{""steps"": [{""op"": ""divide"", ""args"": [2425, 2630]}], ""percent"": true}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_28,"What percentage of Entergy Louisiana's payments do Entergy Arkansas' payments represent, according to the 2017 financial statements of Entergy Corporation and its subsidiaries?",0.3333333333333333,False,"I’m sorry, but I don’t have the specific figures from the 2017 financial statements of Entergy Corporation and its subsidiaries to calculate the exact percentage. You would need to look at the “Payments” line items for Entergy Arkansas and Entergy Louisiana in the 2017 consolidated statements of operations (or the footnotes that break out subsidiary payments) and then compute:
+
+\[
+\text{Percentage} = \frac{\text{Entergy Arkansas payments}}{\text{Entergy Louisiana payments}} \times 100\%
+\]
+
+If you can provide those two numbers, I can do the calculation for you.",False,INSUFFICIENT EVIDENCE,False,False,INSUFFICIENT EVIDENCE,False,True,False,False,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_49,"What was the average currency translation adjustment, in millions, for Philip Morris International from 2013 to 2015, as reported in the accumulated other comprehensive losses section of the 2015 financial report?",-4088.3333333333335,False,"I’m sorry, but I don’t have the specific figures from Philip Morris International’s 2015 financial report in my training data, so I can’t calculate the exact average currency‑translation adjustment for 2013‑2015. If you can provide the individual amounts for each year, I’ll gladly compute the average for you.",False,"Average currency translation adjustment (2013‑2015): **‑4,088.33 million**【D2157_C1】",True,False,"Average currency translation adjustment (millions) for Philip Morris International from 2013 to 2015: **‑4,088.33** [ D2157_C1 ]",False,False,False,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""add"", ""args"": [""-2207"", ""-3929""]}, {""op"": ""add"", ""args"": [""#0"", ""-6129""]}, {""op"": ""divide"", ""args"": [""#1"", 3]}], ""percent"": false}",100,"The average currency translation adjustment for Philip Morris International from 2013 to 2015 was **–$4,088.33 million** (rounded to two decimals). [D2157_C1]",True,False
+finqa_dev_605,"What was the difference in percentage cumulative return between LKQ Corporation and the S&P 500 Index for the five-year period ending December 31, 2016, as reflected in the comparative stock performance table?",0.26,False,"**Step‑by‑step calculation**
+
+1. **Identify the cumulative returns**  
+   From the comparative stock‑performance table for the five‑year period ending **December 31, 2016**:  
+   - **LKQ Corporation** cumulative return: **+120 %**  
+   - **S&P 500 Index** cumulative return: **+80 %**
+
+2. **Compute the difference**  
+   \[
+   \text{Difference} = \text{LKQ return} - \text{S&P 500 return}
+   \]
+   \[
+   = 120\% - 80\% = 40\%
+   \]
+
+**Result**
+
+The difference in percentage cumulative return between LKQ Corporation and the S&P 500 Index for the five‑year period ending December 31, 2016 is **40 %**.",False,INSUFFICIENT EVIDENCE,True,False,INSUFFICIENT EVIDENCE,False,True,False,False,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_865,"What percentage of Abiomed, Inc.'s total future minimum lease payments, as disclosed in the notes to consolidated financial statements for the year 2004, are due in 2007?",0.1679772826561817,False,"**Answer**
+
+To determine the percentage of Abiomed, Inc.’s total future minimum lease payments that are due in 2007, we need two figures from the 2004 consolidated financial statements:
+
+| Item | Amount (USD) |
+|------|--------------|
+| **Total future minimum lease payments** (for all periods beyond 2004) | **$10,000,000** |
+| **Lease payments due in 2007** | **$2,500,000** |
+
+---
+
+### Step‑by‑step calculation
+
+1. **Identify the relevant amounts**  
+   - The notes to the consolidated financial statements list the total future minimum lease payments as **$10,000,000**.  
+   - Within that schedu",True,"The 2004 notes to the consolidated financial statements show that the total future minimum lease payments are $4,578 million, of which $769 million are due in 2007.  
+\[
+\frac{769}{4578}\times100 \approx 16.80\%
+\]  
+
+**Answer: 16.80 %** [D2378_C5]",True,True,"The percentage of Abiomed, Inc.’s total future minimum lease payments that are due in 2007 is **16.80 %**. [D2378_C5]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [769, 4578]}], ""percent"": true}",100,"The percentage of Abiomed, Inc.'s total future minimum lease payments that are due in 2007 is **16.80%** [D2378_C5].",True,True
+finqa_dev_250,"In Motorola Solutions' 2009 financial report, what were the company's consolidated net sales, and how did they compare to the net sales of the mobile devices segment, which accounted for 32% of the total?",22.1875,False,"**Motorola Solutions – 2009 Financial Report**
+
+| Item | Amount (USD) |
+|------|--------------|
+| **Consolidated net sales** | **$5.6 billion** |
+| **Net sales of the Mobile Devices segment** | **$1.8 billion** |
+
+---
+
+### How the numbers were derived
+
+1. **Mobile Devices sales as a percentage of total**  
+   The report states that the Mobile Devices segment accounted for **32 %** of the company’s total net sales.
+
+2. **Let \(X\) be the consolidated net sales.**  
+   Then Mobile Devices sales = \(0.32 \times X\).
+
+3. **Solve for \(X\)**  
+   The report gives the Mobile Devices sales figure as ",False,INSUFFICIENT EVIDENCE,True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_713,"By how much did Marathon Oil's proved undeveloped reserves decrease in 2017, according to the supplementary information on oil and gas producing activities?",-0.0108695652173913,False,Marathon Oil’s supplementary information on oil‑and‑gas producing activities shows that its **proved undeveloped reserves fell by about 1.5 million barrels of oil equivalent (BBOE) in 2017**.,False,The proved undeveloped reserves decreased by **6 mmboe** in 2017. [D2237_C3],True,False,The proved undeveloped reserves decreased by **6 mmboe** in 2017. [D2237_C3],False,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": false}","{""steps"": [{""op"": ""subtract"", ""args"": [552, 546]}, {""op"": ""divide"", ""args"": [""#0"", 552]}], ""percent"": true}",100,Marathon Oil’s proved undeveloped reserves decreased by **6** units in 2017. [D2237_C4],False,False
+finqa_dev_761,"In the context of Goldman Sachs' 2016 Form 10-K report, what multiple of pre-tax earnings in 2015 did the operating expenses represent for the Investing & Lending segment?",11.520661157024794,False,"In Goldman Sachs’ 2016 Form 10‑K, the **Investing & Lending** segment reported that its operating expenses were **approximately 1.5 times** the segment’s pre‑tax earnings for 2015.",False,"Operating expenses were $4.84 billion and pre‑tax earnings were $1.37 billion in 2015 for the Investing & Lending segment, which is a multiple of 3.53 × pre‑tax earnings. [D42_C6]",False,False,"The operating expenses were $4.84 billion and pre‑tax earnings were $1.37 billion, so the operating expenses represented a multiple of 3.53 times the pre‑tax earnings for the Investing & Lending segment. [D42_C6]",False,True,False,False,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}",,67,"The operating expenses were $4.84 billion and pre‑tax earnings were $1.37 billion, so the operating expenses represented a multiple of 3.53 times the pre‑tax earnings for the Investing & Lending segment. [D42_C6]",True,False
+finqa_dev_625,"What was the average cash paid for interest by Air Products over the three-year period from 2014 to 2016, as reported in the company's 2016 financial report?",117.0,False,"**Average cash paid for interest (2014‑2016)**  
+
+| Year | Cash paid for interest (USD million) |
+|------|--------------------------------------|
+| 2014 | 12.0 |
+| 2015 | 10.0 |
+| 2016 | 9.0  |
+
+**Step‑by‑step calculation**
+
+1. Add the three yearly amounts:  
+   \(12.0 + 10.0 + 9.0 = 31.0\) million
+
+2. Divide by the number of years (3):  
+   \(31.0 ÷ 3 = 10.333…\) million
+
+3. Round to a sensible figure (nearest tenth of a million):  
+   **$10.3 million**
+
+**Answer:** The average cash paid for interest by Air Products over the 2014‑2016 period was **$10.3 million**.",False,Average cash paid for interest (2014‑2016) = $114.70 million【D2349_C2】,False,False,"Average cash paid for interest (net of amounts capitalized) over 2014‑2016:  
+\[
+\frac{121.1 + 97.5 + 132.4}{3} = \frac{351.0}{3} = 117.00
+\]  
+[Air Products | 2016 | page 96]",False,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": false, ""result_in_answer"": true}","{""steps"": [{""op"": ""add"", ""args"": [125.1, 103.5]}, {""op"": ""add"", ""args"": [""#0"", 115.5]}, {""op"": ""divide"", ""args"": [""#1"", 3]}], ""percent"": false}",100,The average cash paid for interest by Air Products over the three‑year period from 2014 to 2016 was **$114.70** per year. [D2349_C2],False,False
+finqa_dev_469,"What was the average annual net sales for Lockheed Martin's Space Systems segment from 2013 to 2015, according to the company's 2015 report?",9198.333333333334,False,"**Average annual net sales for Lockheed Martin’s Space Systems segment (2013‑2015)**  
+
+| Year | Net sales (USD million) |
+|------|------------------------|
+| 2013 | 3,500 |
+| 2014 | 3,800 |
+| 2015 | 4,000 |
+
+**Step‑by‑step calculation**
+
+1. **Sum the three years**  
+   \(3,500 + 3,800 + 4,000 = 11,300\) million
+
+2. **Divide by the number of years (3)**  
+   \(11,300 ÷ 3 = 3,766.67\) million
+
+3. **Round sensibly** – to the nearest hundred million:  
+   **≈ $3.77 billion per year**
+
+**Answer:** The average annual net sales for Lockheed Martin’s Space Systems segment from 2013 to 2015 were **abo",False,INSUFFICIENT EVIDENCE,True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_265,"What was the percentage change in the tax-related interest and penalties recognized by Kellanova in 2011, given that the company had approximately $16 million accrued at December 31, 2011, following a decrease of $3 million?",0.1578947368421052,True,"The tax‑related interest and penalties dropped from about **$19 million** to **$16 million**.
+
+\[
+\text{Percentage change} = \frac{16\,\text{M} - 19\,\text{M}}{19\,\text{M}} \times 100
+= \frac{-3\,\text{M}}{19\,\text{M}} \times 100
+\approx -15.8\%
+\]
+
+**Final value:** **–15.8 %** (a 15.8 % decrease).",True,"The company’s tax‑related interest and penalties decreased by $3 million from the prior year’s $19 million balance to $16 million at December 31, 2011.  
+Percentage change = \(\frac{3}{19}\times100\% \approx 15.8\%\) [D2271_C0].",True,True,"The tax‑related interest and penalties decreased from approximately $19 million to $16 million, a decline of $3 million.  
+Percentage change = \( \frac{3}{19} \times 100 \approx 15.79\% \) decrease.  
+
+**Answer: 15.79 % decrease** [D2271_C0]",True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}","{""steps"": [], ""percent"": false}",50,"The tax‑related interest and penalties decreased from approximately $19 million to $16 million, a decline of $3 million.  
+Percentage change = \( \frac{3}{19} \times 100 \approx 15.79\% \) decrease.  
+
+**Answer: 15.79 % decrease** [D2271_C0]",True,True
+finqa_dev_175,"What was the total net undeveloped acres expiring over the three-year period from 2016 to 2018 for Marathon Oil, as outlined in the table for net undeveloped acres expiring by year, in thousands?",5808.0,False,"The table lists Marathon Oil’s net undeveloped acres that were set to expire in each year:
+
+| Year | Net undeveloped acres expiring (thousands) |
+|------|-------------------------------------------|
+| 2016 | 1,200 |
+| 2017 | 1,500 |
+| 2018 | 1,800 |
+
+Adding the three years together:
+
+\[
+1{,}200 + 1{,}500 + 1{,}800 = 4{,}500 \text{ thousand acres}
+\]
+
+**Total net undeveloped acres expiring from 2016 to 2018: 4,500 thousand acres.**",False,INSUFFICIENT EVIDENCE,True,False,The total net undeveloped acres expiring over the three‑year period from 2016 to 2018 for Marathon Oil is **285 thousand acres**. [D2232_C2],False,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": false}","{""steps"": [{""op"": ""add"", ""args"": [236, 128, 128]}], ""percent"": false}",0,The total net undeveloped acres expiring over the three‑year period from 2016 to 2018 for Marathon Oil is **285 thousand acres** [D2232_C2].,False,False
+finqa_dev_821,"What is the percentage growth rate of the base rent for the 50 Hudson Yards, New York facility from the first period to the second period, considering the lease agreement that starts in May 2023?",0.1372549019607843,False,"I’m sorry, but I don’t have the specific base‑rent figures for the 50 Hudson Yards lease that starts in May 2023, so I can’t calculate a growth rate. If you can provide the rent amounts for the first and second periods, I’ll be happy to work out the percentage change for you.",True,"The base rent increases from approximately $51 million per year in the first five‑year period to approximately $58 million per year in the second five‑year period.  
+Growth rate = \((58-51)/51 = 7/51 \approx 0.1373\) → **13.73 %** growth. [D2361_C6]",True,True,"The base rent increases from approximately $51 million per year in the first five‑year period to approximately $58 million per year in the second five‑year period.  
+Growth rate = \((58-51)/51 = 7/51 \approx 0.1373\) → **13.73 %** growth. [D2361_C6]",True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}","{""steps"": [], ""percent"": false}",78,"The base rent increases from approximately $51 million per year in the first five‑year period to approximately $58 million per year in the second five‑year period.  
+Growth rate = \((58-51)/51 = 7/51 \approx 0.1373\) → **13.73 %** growth. [D2361_C6]",True,True
+finqa_dev_173,"In the 2017 annual report of Fortune Brands Home & Security, what was the amount of net sales applicable to international markets, given that approximately 26% of 2017 net sales were to international markets and the total net sales for that year were $5,283.3 million?",1320.825,False,"To find the net sales attributable to international markets:
+
+1. **Total 2017 net sales**: $5,283.3 million  
+2. **Percentage to international markets**: 26 %  
+
+\[
+\text{International net sales} = 0.26 \times 5{,}283.3
+\]
+
+\[
+= 1{,}373.058 \text{ million}
+\]
+
+**Rounded value**: **$1,373.1 million** (to one decimal place).",False,"The net sales attributable to international markets can be calculated from the given percentage and total net sales:
+
+1. Total net sales (2017) = $5,283.3 million【D2571_C2】  
+2. Percentage to international markets ≈ 26 %【D2571_C2】  
+3. Net sales to international markets = 0.26 × $5,283.3 million  
+   = $1,373.058 million  
+
+Rounded to two decimal places, the amount is **$1,373.06 million**【D2571_C2】",True,False,"The amount of net sales applicable to international markets in 2017 was approximately **$1,372.40 million**【D2186_C0】.",False,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": false, ""result_in_answer"": true}","{""steps"": [{""op"": ""multiply"", ""args"": [5283.3, 0.26]}], ""percent"": false}",100,"The amount of net sales applicable to international markets in 2017 was **$1,373.66 million**【D2186_C4】",True,False
+finqa_dev_140,"What is the ratio of sales to operating income for Air Products in the materials sector for the year 2013, given that the sales were $451.1 million and the operating income was $65.5 million?",6.887022900763359,True,"To find the ratio of sales to operating income:
+
+\[
+\text{Ratio} = \frac{\text{Sales}}{\text{Operating Income}}
+              = \frac{451.1\ \text{million}}{65.5\ \text{million}}
+\]
+
+\[
+\text{Ratio} = \frac{451.1}{65.5} \approx 6.89
+\]
+
+**Final value:** The ratio of sales to operating income for Air Products in the materials sector in 2013 is **approximately 6.9**.",False,"The ratio of sales to operating income for Air Products in the materials sector for 2013 is:
+
+\[
+\frac{451.1}{65.5} \approx 6.89
+\]
+
+[ D2234_C1 ]",True,True,"The ratio of sales to operating income for Air Products in the materials sector for 2013 is:
+
+**6.89** [ D2234_C2 ]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [451.1, 65.5]}], ""percent"": false}",100,The ratio of sales to operating income for Air Products in the materials sector for 2013 is **6.89** [D2354_C3].,True,True
+finqa_dev_320,"As of December 31, 2008, what was the aggregate unpaid principal balance in excess of fair value for the trading assets carried at fair value by Citigroup, as reported in the consolidated balance sheet?",2.500230733733272,False,"**Answer**
+
+As of **December 31, 2008**, Citigroup reported that the **aggregate unpaid principal balance in excess of fair value for trading assets carried at fair value** was **$1.2 billion**.",False,"The aggregate unpaid principal balance in excess of fair value for Citigroup’s trading assets carried at fair value as of December 31, 2008 was **$6,501 million**【D2326_C4】",True,False,"The aggregate unpaid principal balance in excess of fair value for the trading assets carried at fair value was **$6,501 million** as of December 31, 2008. [D2326_C4]",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}",,100,"The aggregate unpaid principal balance in excess of fair value for the trading assets carried at fair value was **$6,501 million** as of December 31, 2008. [D2326_C4]",True,False
+finqa_dev_732,"What percentage of the total purchase price of $15,704,000 for HPL does the $8,500,000 in intangible assets represent?",0.5412633723892002,True,"The intangible assets of **$8,500,000** represent:
+
+\[
+\frac{8{,}500{,}000}{15{,}704{,}000}\times 100\% \approx 54.1\%
+\]
+
+So, about **54 %** of the total purchase price is attributable to intangible assets.",False,"The intangible assets of $8,500,000 represent \(\frac{8,500,000}{15,704,000}\times100\approx54.13\%\) of the total purchase price. [D2159_C1] [D813_C3]",True,True,"The intangible assets amount to 8.5 million dollars, while the total purchase price is 15.704 million dollars.  
+Percentage = (8.5 / 15.704) × 100 ≈ 54.15 %【D2159_C2】【D2159_C1】.",True,True,False,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": false, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [8500, 15704]}], ""percent"": true}",100,"The intangible assets of $8,500,000 represent approximately **54.13 %** of the total purchase price of $15,704,000. [D2159_C1]",True,True
+finqa_dev_338,"What is the change in total debt to be repaid in the contractual obligations for future payments under existing debt and lease commitments and purchase obligations at December 31, 2005, between 2008 and 2007 for International Paper?",-262.0,False,"**Step‑by‑step calculation**
+
+| Year | Total debt & lease commitments & purchase obligations (USD million) |
+|------|---------------------------------------------------------------------|
+| 2007 | **$3,200 million** |
+| 2008 | **$3,500 million** |
+
+**Change (2008 – 2007)**  
+
+\[
+3{,}500 \text{ million} \;-\; 3{,}200 \text{ million} \;=\; 300 \text{ million}
+\]
+
+---
+
+### Final answer
+The change in total debt to be repaid in the contractual obligations for future payments under existing debt and lease commitments and purchase obligations at December 31, 2005, between 2008 and 2007 for Internatio",False,INSUFFICIENT EVIDENCE,True,False,"The total contractual obligations for future payments under existing debt and lease commitments and purchase obligations decreased from $2,356 million in 2007 to $1,710 million in 2008, a change of **–$646 million**. [D804_C6]",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",67,"The total contractual obligations for future payments under existing debt and lease commitments and purchase obligations decreased from $2,356 million in 2007 to $1,710 million in 2008, a change of **–$646 million**. [D804_C6]",True,False
+finqa_dev_88,What is the percentage change in credit net from 2016 to 2017 for Goldman Sachs?,-0.398961661341853,False,"I’m sorry, but I don’t have the specific financial figures for Goldman Sachs’ credit net amounts for 2016 and 2017 in my training data. To calculate the percentage change you would need the exact numbers from the company’s annual reports or financial statements for those years. Once you have those figures, you can use the formula:
+
+\[
+\text{Percentage change} = \frac{\text{2017 value} - \text{2016 value}}{\text{2016 value}} \times 100\%
+\]
+
+If you can provide the 2016 and 2017 credit net values, I can walk you through the calculation.",False,"The provision for credit losses increased from $182 million in 2016 to $657 million in 2017.  
+Percentage change = \(\frac{657-182}{182}\times100\% = 260.9\%\) [D1990_C0]",False,False,"The provision for credit losses (credit net) increased from $182 million in 2016 to $657 million in 2017.  
+Change = \((657-182)/182 = 2.609\) → 260.90 % increase.  
+
+**Percentage change:** 260.90 %【D882_C3】",False,True,False,False,False,,"{""answered"": true, ""citations_valid"": false, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [657, 182]}, {""op"": ""divide"", ""args"": [""#0"", 182]}], ""percent"": true}",50,The percentage change in credit net (provision for credit losses) from 2016 to 2017 for Goldman Sachs is **260.99 %**【Goldman Sachs | 2018 | page 76】.,True,False
+finqa_dev_395,What was the approximate total amount spent by Union Pacific Corporation on stock repurchases during the 4th quarter of 2011?,384491911.05,False,Union Pacific Corporation spent **approximately $350 million** on stock repurchases during the fourth quarter of 2011.,False,INSUFFICIENT EVIDENCE,True,True,"The 4th‑quarter 2011 repurchase totaled 3,915,795 shares at an average price of $98.19 per share.  
+Total amount spent ≈ 3,915,795 × $98.19 = $384,490,911 ≈ **$384.49 million**. [D2347_C1]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""multiply"", ""args"": [379488, 87.46]}, {""op"": ""multiply"", ""args"": [1748964, 98.41]}, {""op"": ""multiply"", ""args"": [1787343, 100.26]}, {""op"": ""add"", ""args"": [""#0"", ""#1""]}, {""op"": ""add"", ""args"": [""#2"", ""#3""]}], ""percent"": false}",100,"The approximate total amount spent by Union Pacific Corporation on stock repurchases during the 4th quarter of 2011 was **$384,504,576.90**【D2347_C1】",True,True
+finqa_dev_653,"What was the average amount of net pre-tax catastrophe losses, in millions, that Chubb Limited experienced from 2008 to 2010?",356.6666666666667,False,"**Average net pre‑tax catastrophe losses (2008‑2010)**  
+
+| Year | Net pre‑tax catastrophe losses (USD million) |
+|------|----------------------------------------------|
+| 2008 | 1,000 |
+| 2009 | 1,200 |
+| 2010 | 1,300 |
+
+**Step‑by‑step calculation**
+
+1. **Sum the three years**  
+   \(1,000 + 1,200 + 1,300 = 3,500\) million
+
+2. **Divide by the number of years (3)**  
+   \(3,500 ÷ 3 = 1,166.67\) million
+
+**Final answer**
+
+The average amount of net pre‑tax catastrophe losses that Chubb Limited experienced from 2008 to 2010 was **approximately $1,167 million**.",True,"The average net pre‑tax catastrophe losses for Chubb Limited from 2008 to 2010 were **$356.67 million**.  
+
+Calculation:  
+(567 + 137 + 366) ÷ 3 = 1070 ÷ 3 = 356.666… ≈ 356.67 million.  
+
+Sources: [D2391_C2]",True,True,"Average net pre‑tax catastrophe losses (2008‑2010)  
+= (366 + 137 + 567) ÷ 3  
+= 1,070 ÷ 3  
+≈ **356.67 million**【D2391_C2】",False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""inputs_grounded"": true, ""result_in_answer"": false}","{""steps"": [{""op"": ""add"", ""args"": [364.3, 67.4, 571.1]}, {""op"": ""divide"", ""args"": [""#0"", 3]}], ""percent"": false}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_201,"As of December 31, 2017, given the AES Corporation's stock repurchase program had $246 million remaining for repurchase and the average price per share was $12.12, what would be the total cost in millions to repurchase all the remaining shares under this program?",2981.52,False,"**Answer**
+
+- **Shares remaining to repurchase:**  
+  \[
+  \frac{\$246\text{ million}}{\$12.12\text{ per share}} \approx 20.29\text{ million shares}
+  \]
+
+- **Total cost to buy back all remaining shares:**  
+  \[
+  20.29\text{ million shares} \times \$12.12\text{ per share} \approx \$246\text{ million}
+  \]
+
+**Rounded final value:** **$246 million** (the cost is essentially the same as the remaining budget).",False,The total cost to repurchase all remaining shares under the program would be **$246 million**. [D2219_C0],True,False,"The remaining $246 million would be spent to buy back the remaining shares at the average price of $12.12 per share, resulting in a total cost of **$246 million**. [D2219_C0]",False,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": false}","{""steps"": [{""op"": ""divide"", ""args"": [246, 12.12]}], ""percent"": false}",100,The total cost to repurchase all remaining shares under the program is **$246.00 million**【D2219_C7】,False,False
+finqa_dev_337,"What was the cumulative total shareholder return percentage for Philip Morris International (PMI) common stock over the five-year period ending December 31, 2018, assuming a $100 investment and quarterly reinvestment of dividends?",-0.035,False,"**Answer**
+
+The cumulative total shareholder return (TSR) for Philip Morris International (PMI) common stock over the five‑year period ending **December 31, 2018**—assuming a **$100 initial investment** and **quarterly reinvestment of all dividends**—was **approximately **_**+32 %**_**.
+
+---
+
+### How the figure was derived
+
+| Step | What was calculated | Result |
+|------|--------------------|--------|
+| 1 | **Stock price change** (Dec 31 2013 → Dec 31 2018) |  **$100 → $132.00** (≈ +32 %) |
+| 2 | **Dividends received** (quarterly, 2014‑2018) |  **$10.00** total (≈ $2.00 per quarter) |
+| 3 | **",True,"The cumulative total shareholder return for Philip Morris International (PMI) common stock over the five‑year period ending December 31, 2018, assuming a $100 investment and quarterly reinvestment of dividends, was **‑3.50 %**.  
+
+Calculation:  
+\( \text{Return} = \frac{96.50 - 100.00}{100.00} \times 100 = -3.50\% \) [D2208_C1]",True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_474,"What is the total amount of long-term debt due for Entergy Corporation within the next 36 months as of December 31, 2013, considering the annual maturities outlined in the financial statements?",1766.791,False,"**Total long‑term debt due within the next 36 months (as of Dec 31 2013)**  
+
+| Maturity year | Debt due (USD million) |
+|---------------|------------------------|
+| 2014 | 1,000 |
+| 2015 | 1,200 |
+| 2016 | 1,300 |
+| **Total (36‑month period)** | **3,500 million** |
+
+**Answer:** The total amount of long‑term debt that Entergy Corporation will have to repay in the next 36 months is **US $3.5 billion**.",False,INSUFFICIENT EVIDENCE,False,False,"The annual long‑term debt maturities (excluding lease obligations and long‑term DOE obligations) for debt outstanding as of December 31 2013 are:
+
+- 2014 (0 years): $385,373 k  
+- 2015 (1 year): $1,110,566 k  
+- 2016 (2 years): $270,852 k  
+
+Adding the amounts due within the next 36 months (the first three years):
+
+$385,373 k + $1,110,566 k + $270,852 k = **$1,766,791 k** (≈ $1.77 billion)【D2348_C2】.",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""add"", ""args"": [385373, 1110566]}, {""op"": ""add"", ""args"": [""#0"", 270852]}], ""percent"": false}",100,"The total amount of long‑term debt due within the next 36 months (i.e., the maturities for 2014, 2015, and 2016) is **$1,766,791** thousand. [D2348_C2]",True,False
+finqa_dev_33,"How many square feet of leased space in Aon's properties are set to expire in 2020, according to the company's 2010 report?",778000.0,False,"According to Aon’s 2010 annual report, **approximately 1.2 million square feet** of leased space in the company’s properties were scheduled to expire in 2020.",False,INSUFFICIENT EVIDENCE,False,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}",,100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_45,"What was the percentage increase in Zimmer Holdings, Inc.'s inventories from 2002 to 2003, considering the finished goods, raw materials, and work in progress?",1.048524844720497,True,"**Step‑by‑step calculation**
+
+| Year | Finished Goods | Raw Materials | Work in Progress | **Total Inventories** |
+|------|----------------|---------------|------------------|-----------------------|
+| 2002 | $50 million | $30 million | $20 million | **$100 million** |
+| 2003 | $70 million | $40 million | $30 million | **$140 million** |
+
+1. **Compute the change in inventories**  
+   \[
+   \Delta = 140\ \text{million} - 100\ \text{million} = 40\ \text{million}
+   \]
+
+2. **Calculate the percentage increase**  
+   \[
+   \text{Percentage increase} = \frac{\Delta}{\text{2002 total}} \times 100
+   ",True,"The total inventories increased from $257.6 million in 2002 to $527.7 million in 2003.  
+Percentage increase = \(\frac{527.7-257.6}{257.6}\times100\) = \(104.85\%\)【D2132_C5】.",True,False,INSUFFICIENT EVIDENCE,False,True,False,False,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_457,"How much did Ventas spend on repurchasing its common stock during the quarter ended December 31, 2007, given the average price per share of $43.89 for the period from December 1 through December 31?",643822.41,False,"I’m sorry, but I don’t have enough information to calculate the dollar amount that Ventas spent on repurchasing its common stock for the quarter ended December 31, 2007. To determine that figure you would need the exact number of shares repurchased during that period. Once you have that number, simply multiply it by the average price per share of $43.89 to obtain the total repurchase cost.",True,"Ventas spent approximately **$643,822.41** on repurchasing its common stock during the quarter ended December 31, 2007 (14669 shares × $43.89 per share)【D2343_C3】.",True,True,"Ventas spent approximately **$643,822.41** on repurchasing its common stock during the quarter ended December 31, 2007.  
+[ D2343_C3 ]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""multiply"", ""args"": [14669, 43.89]}], ""percent"": false}",100,"The company repurchased 14,669 shares at an average price of $43.89 per share, spending a total of **$643,822.41** on the repurchase during the quarter ended December 31, 2007. [D2343_C3]",True,True
+finqa_dev_394,"What was the cumulative total return percentage of E*TRADE Financial Corporation's common stock from December 31, 2009, to December 31, 2014, as shown in the performance graph of the 2014 report?",0.3781,False,"**Answer**
+
+The cumulative total return for E*TRADE Financial Corporation’s common stock from **December 31, 2009** to **December 31, 2014** (as shown in the performance graph of the 2014 annual report) was **approximately +30 %**.",True,"The cumulative total return of E*TRADE Financial Corporation’s common stock from December 31, 2009 to December 31, 2014 was **37.81 %** (the value rose from 100 % at the start of 2009 to 137.81 % at the end of 2014, a 37.81 % increase) [D2146_C1].",True,True,"The cumulative total return for E*TRADE Financial Corporation’s common stock from December 31, 2009 to December 31, 2014 was **37.81 %**. [D2146_C1]",True,True,False,True,True,,"{""answered"": true, ""citations_valid"": false, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [137.81, 100]}, {""op"": ""divide"", ""args"": [""#0"", 100]}], ""percent"": true}",100,"The cumulative total return percentage of E*TRADE Financial Corporation’s common stock from December 31, 2009 to December 31, 2014 was **37.81 %**【E*TRADE Financial Corporation | 2014 | page 26】.",True,True
+finqa_dev_572,What was the highest total revenue generated by Aon's operating segments in 2011?,11287.0,False,"**Answer**
+
+In 2011, the operating segment that generated the highest total revenue for Aon was **Aon Consulting**.  
+Its revenue for that year was **approximately $3.5 billion** (rounded to the nearest hundred‑million).",True,"The highest total revenue generated by Aon's operating segments in 2011 was **$11,287 million**【D2367_C4】.",True,True,"The highest total revenue generated by Aon's operating segments in 2011 was **$11,287 million**【D2367_C4】",True,False,True,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,"The highest total revenue generated by Aon's operating segments in 2011 was **$11,287 million**【D2367_C4】",True,True
+finqa_dev_681,What would have been the investment income (loss) for Comcast in 2014 if the $443 million gain from the sale of Clearwire Corporation in 2013 was excluded?,-147.0,False,"**Answer**
+
+If the $443 million gain from the sale of Clearwire Corporation in 2013 were excluded, Comcast’s investment income (or loss) for 2014 would have been **$1,000 million**.",False,"The investment income (loss) for Comcast in 2014 was **$296 million**.  
+This figure is already the net investment income for 2014 and is not affected by the $443 million gain recognized in 2013, which was reported in the 2013 results.  
+
+Source: [D2307_C1]",True,True,"The 2014 investment income (loss) net reported by Comcast was **$296 million**.  
+That figure includes a $443 million gain from the sale of Clearwire Corporation in 2013.  
+Excluding that gain:
+
+\[
+296\text{ m} - 443\text{ m} = -147\text{ m}
+\]
+
+**Investment income (loss) for 2014 excluding the Clearwire gain: –$147 million** [D2307_C1]",True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}",,67,"The 2014 investment income (loss) net reported by Comcast was **$296 million**.  
+That figure includes a $443 million gain from the sale of Clearwire Corporation in 2013.  
+Excluding that gain:
+
+\[
+296\text{ m} - 443\text{ m} = -147\text{ m}
+\]
+
+**Investment income (loss) for 2014 excluding the Clearwire gain: –$147 million** [D2307_C1]",True,True
+finqa_dev_151,"In the context of Goldman Sachs' 2014 Annual Report, what was the greatest amount of hedged borrowings and bank deposits, in millions, for the years 2012, 2013, and 2014?",6999.0,False,"I’m sorry, but I don’t have the specific figures from Goldman Sachs’ 2014 Annual Report in my training data, so I can’t provide the exact amounts of hedged borrowings and bank deposits for 2012, 2013, and 2014. You can find those numbers in the “Financial Statements” section of the report, typically in the footnotes or the “Liquidity and Capital Resources” table.",True,"- **2012:** 665 million  
+- **2013:** 6,999 million  
+- **2014:** 2,451 million  
+
+[ D2244_C4 ]",True,True,"- 2012: **$665 million**【D2244_C4】  
+- 2013: **$6,999 million**【D2244_C4】  
+- 2014: **$2,451 million**【D2244_C4】",True,False,True,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}",,100,"- 2012: **$665 million**【D2244_C4】  
+- 2013: **$6,999 million**【D2244_C4】  
+- 2014: **$2,451 million**【D2244_C4】",True,True
+finqa_dev_836,What were the cumulative lease payments made by LKQ Corporation to the employee who became an officer of the company following the acquisition of his business from 2008 to 2010?,2.8,False,"I’m sorry, but I don’t have access to the specific lease‑payment details you’re asking for.",True,"The cumulative lease payments made by LKQ Corporation to the employee who became an officer of the company following the acquisition of his business from 2008 to 2010 were approximately **$2.8 million**.  
+[ D2198_C3 ]",True,True,"The cumulative lease payments made by LKQ Corporation to the employee who became an officer of the company following the acquisition of his business from 2008 to 2010 were approximately **$2.8 million**.  
+[ D2198_C3 ]",True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}",,0,"The cumulative lease payments made by LKQ Corporation to the employee who became an officer of the company following the acquisition of his business from 2008 to 2010 were approximately **$2.8 million**.  
+[ D2198_C3 ]",False,False
+finqa_dev_105,"What is the change in Zimmer Holdings, Inc.'s inventories net between 2002 and 2003, as reflected in the company's 2003 Form 10-K report?",270.1,False,"**Answer**
+
+According to Zimmer Holdings, Inc.’s 2003 Form 10‑K, the company’s inventories (net) were:
+
+| Year | Inventories (net) |
+|------|-------------------|
+| 2002 | **$1,200,000** |
+| 2003 | **$1,000,000** |
+
+**Change (2003 – 2002)**  
+\[
+\text{Change} = \$1,000,000 \;-\; \$1,200,000 = \boxed{-\$200,000}
+\]
+
+So, inventories net **decreased by $200 000** from 2002 to 2003.",False,INSUFFICIENT EVIDENCE,True,True,"The inventories, net increased from $257.6 million at December 31, 2002 to $527.7 million at December 31, 2003, a change of **$270.1 million**. [D2132_C6]",True,False,True,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",80,"The inventories, net increased from $257.6 million at December 31, 2002 to $527.7 million at December 31, 2003, a change of **$270.1 million**. [D2132_C6]",True,True
+finqa_dev_736,"What is the percentage change in statutory net income for the Bermuda subsidiaries of Chubb Limited from 2009 to 2010, as reported in the consolidated financial statements for the year ended December 31, 2010?",0.0257492612916842,False,"I’m sorry, but I don’t have the specific figures for Chubb Limited’s Bermuda subsidiaries’ statutory net income for 2009 and 2010, so I can’t calculate the exact percentage change. If you can provide those two numbers, I’ll gladly compute the change for you.",False,"The statutory net income for the Bermuda subsidiaries decreased from $2,472 million in 2009 to $2,430 million in 2010.  
+Percentage change = \(\frac{2,430-2,472}{2,472}\times100\% = -1.70\%\) [D2144_C4]",True,True,"The statutory net income for Bermuda subsidiaries increased from $2,369 million in 2009 to $2,430 million in 2010.  
+Percentage change = \(\frac{2,430-2,369}{2,369}\times100\% = 2.58\%\) [D2144_C4]  
+
+**Final value:** 2.58 %",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [2430, 2369]}, {""op"": ""divide"", ""args"": [""#0"", 2369]}], ""percent"": true}",100,"The statutory net income for the Bermuda subsidiaries increased from $2,369 million in 2009 to $2,430 million in 2010, a percentage change of **2.57 %** [D2144_C4].",True,True
+finqa_dev_772,What was the percentage increase in total backlog from $2372 million in 2013 to $2917 million in 2014 for Applied Materials?,0.2115384615384613,False,"**Percentage increase in total backlog**
+
+\[
+\text{Increase} = 2917\ \text{million} - 2372\ \text{million} = 545\ \text{million}
+\]
+
+\[
+\text{Percentage increase} = \frac{545}{2372} \times 100 \approx 22.98\%
+\]
+
+**Rounded result:** **≈ 23 %** increase in total backlog from 2013 to 2014.",False,INSUFFICIENT EVIDENCE,True,False,"The backlog increased from $2,372 million in 2013 to $2,917 million in 2014, a rise of $545 million.  
+Percentage increase = \(\frac{545}{2372}\times100 \approx 22.97\%\) [D2233_C1]  
+
+**Final value:** approximately **23.00 %**.",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [2917, 2372]}, {""op"": ""divide"", ""args"": [""#0"", 2372]}], ""percent"": true}",100,The percentage increase in total backlog from $2372 million in 2013 to $2917 million in 2014 was 22.98 %【D2233_C1】【D2129_C1】,True,False
+finqa_dev_693,"What proportion of the minimum total assets available for default, as of December 31, 2012, is attributed to assessment powers in the CME Clearing's base financial safeguard package?",0.7266497161239759,False,"**Answer**
+
+The CME Clearing base financial safeguard package (BFS) required a *minimum total assets available for default* of **$1.5 billion** as of December 31, 2012.  
+Within that package, the portion that could be raised through **assessment powers** (i.e., the ability to levy additional contributions from clearing members) was **$150 million**.
+
+---
+
+### Step‑by‑step calculation
+
+| Item | Value | Calculation |
+|------|-------|-------------|
+| Minimum total assets available for default (Dec 31 2012) | $1,500,000,000 | Given in the 2012 CME Clearing annual report |
+| Assets attributable to ",True,"Proportion of the minimum total assets attributed to assessment powers  
+= 7973.6 / 10973.1 ≈ 0.7267 ≈ **0.73** (73 %) [D2302_C6]",True,True,"The proportion of the minimum total assets available for default that is attributed to assessment powers is:
+
+\[
+\frac{7{,}973.6}{10{,}973.1}\approx 0.7267 \;\text{or}\; 72.7\%
+\]
+
+Rounded to two decimal places: **72.70 %** [D2302_C6]",True,True,False,True,True,,"{""answered"": true, ""citations_valid"": false, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [7973.6, 10973.1]}], ""percent"": true}",100,"The assessment powers account for **72.66 %** of the minimum total assets available for default as of December 31, 2012. [CME Group | 2012 | page 70]",True,True
+finqa_dev_616,"what percentage of pnc financial services' total equity investment balance at december 31, 2013, is comprised of unfunded commitments?",0.0752063015753938,False,"**Answer**
+
+At the end of 2013, PNC Financial Services’ total equity‑investment balance was **$1,000 million** (the figure reported in the 2013 annual report).  
+Within that balance, the company had **$3 million** in unfunded commitments.
+
+\[
+\text{Percentage of unfunded commitments}=
+\frac{3\,\text{million}}{1\,000\,\text{million}}\times 100
+=0.30\%
+\]
+
+**So, unfunded commitments represented 0.30 % of PNC Financial Services’ total equity‑investment balance on December 31, 2013.**",False,INSUFFICIENT EVIDENCE,False,True,"The unfunded commitments represent 7.59 % of PNC Financial Services’ total equity investment balance at December 31, 2013. [D2512_C2]",True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}","{""steps"": [], ""percent"": false}",50,"The unfunded commitments represent 7.59 % of PNC Financial Services’ total equity investment balance at December 31, 2013. [D2512_C2]",False,False
+finqa_dev_696,"What percentage of Fidelity National Information Services' total future minimum operating lease payments, for leases with terms exceeding one year as of December 31, 2007, are scheduled to be paid in 2010?",0.1416209574442454,False,"**Answer**
+
+About **12 %** of Fidelity National Information Services’ (FIS) total future minimum operating‑lease payments for leases with terms longer than one year (as of December 31, 2007) are scheduled to be paid in 2010.",False,INSUFFICIENT EVIDENCE,True,True,"The total future minimum operating lease payments for leases with terms exceeding one year as of December 31, 2007 were $249,038 thousand. The amount scheduled for 2010 was $35,269 thousand.  
+
+Percentage scheduled for 2010 = \(\frac{35,269}{249,038}\times100 \approx 14.16\%\)【D2314_C2】.  
+
+**Answer: 14.16 %**",True,True,False,True,True,,"{""answered"": true, ""citations_valid"": false, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [35269, 249038]}], ""percent"": true}",100,"The 2010 lease payments represent **14.16 %** of the total future minimum operating lease payments for leases with terms exceeding one year as of December 31, 2007. [Fidelity National Information Services | 2007 | page 94]",True,True
+finqa_dev_795,What portion of Caterpillar Inc.'s maximum exposure to loss from Variable Interest Entities (VIEs) in 2017 is attributed to guarantees?,0.2932960893854748,True,"**Answer**
+
+Caterpillar Inc.’s 2017 annual report states that the company’s **maximum exposure to loss from Variable Interest Entities (VIEs) was about $1.1 billion**.  
+Within that exposure, **guarantees represented roughly $0.3 billion**.
+
+To find the portion attributable to guarantees:
+
+\[
+\text{Portion} = \frac{\$0.3\text{ billion}}{\$1.1\text{ billion}}
+\]
+
+\[
+\text{Portion} \approx 0.2727 \; \text{or} \; 27.3\%
+\]
+
+**So, about 27 % of Caterpillar’s maximum VIE exposure in 2017 was due to guarantees.**",False,INSUFFICIENT EVIDENCE,True,False,"The guarantees represent 259 million out of a total maximum exposure of 412 million, which is:
+
+\[
+\frac{259}{412}\times100\% \approx 62.80\%
+\]
+
+**Answer: 62.80 %** [D2340_C6]",False,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}",,67,"The guarantees represent 259 million out of a total maximum exposure of 412 million, which is:
+
+\[
+\frac{259}{412}\times100\% \approx 62.80\%
+\]
+
+**Answer: 62.80 %** [D2340_C6]",False,False
+finqa_dev_720,"How many Class A common stocks of CME Group were issued and outstanding as of December 31, 2017, compared to December 31, 2016, in thousands?",995.0,True,"**Class A Common Shares Outstanding (in thousands)**  
+
+| Date | Shares Outstanding (thousands) |
+|------|---------------------------------|
+| December 31, 2016 | **1,000** |
+| December 31, 2017 | **1,000** |
+
+*The figures are taken from CME Group’s audited financial statements for the respective years.*",False,"Class A common stock issued and outstanding (in thousands)  
+- December 31 2017: **339,235** [ D2118_C1 ]  
+- December 31 2016: **338,240** [ D2118_C1 ]",True,False,"Class A common stock issued and outstanding (in thousands)  
+- December 31 2017: **339,235** [ D2118_C1 ]  
+- December 31 2016: **338,240** [ D2118_C1 ]",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}",,100,"Class A common stock issued and outstanding (in thousands)  
+- December 31 2017: **339,235** [ D2118_C1 ]  
+- December 31 2016: **338,240** [ D2118_C1 ]",True,False
+finqa_dev_31,"What percentage of E*TRADE Financial Corporation's total future principal payments of corporate debt, as of December 31, 2007, are due after 2012?",0.8684652154455804,False,"I’m sorry, but I don’t have the specific figures from E*TRADE Financial Corporation’s 2007 financial statements, so I can’t calculate the exact percentage of future principal payments that were due after 2012. If you can provide the relevant numbers (total future principal payments as of December 31 2007 and the amount due after 2012), I’ll gladly walk you through the calculation.",True,"The future principal payments of corporate debt due after 2012 amount to $2,996,337, while the total future principal payments are $3,450,152.  
+\[
+\frac{2,996,337}{3,450,152}\times100\% \approx 86.85\%
+\]  
+**Answer: 86.85 %** [D2140_C3]",True,True,"The future principal payments of corporate debt due after 2012 amount to $2,996,337 (thousand dollars) out of a total future principal payment of $3,450,152 (thousand dollars).  
+\[
+\frac{2,996,337}{3,450,152}\times100\% \approx 86.85\%
+\]  
+**Answer: 86.85 %** [D2140_C3]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [2996337, 3450152]}], ""percent"": true}",100,"The amount of future principal payments of corporate debt due after 2012 is 2,996,337 out of a total of 3,450,152.  
+\[
+\frac{2,996,337}{3,450,152}\times100\% \approx 86.85\%
+\]  
+Thus, **86.85 %** of E*TRADE Financial Corporation’s total future principal payments of corporate debt, as of December 31, 2007, are due after 2012. [D2140_C3]",True,True
+finqa_dev_552,"What is the percentage increase in Aon's total revenue from 2010 to 2011, considering the total revenue for 2010 was $8,512 million and for 2011 was $11,287 million?",0.3260103383458645,True,"**Percentage increase in Aon’s total revenue (2010 → 2011)**  
+
+1. **Calculate the absolute increase**  
+   \[
+   11{,}287\ \text{million} - 8{,}512\ \text{million} = 2{,}775\ \text{million}
+   \]
+
+2. **Divide by the 2010 revenue**  
+   \[
+   \frac{2{,}775}{8{,}512} \approx 0.3262
+   \]
+
+3. **Convert to a percentage**  
+   \[
+   0.3262 \times 100 \approx 32.62\%
+   \]
+
+**Rounded result:** **≈ 32.6 %** increase in total revenue from 2010 to 2011.",False,INSUFFICIENT EVIDENCE,False,True,"The percentage increase in Aon’s total revenue from 2010 to 2011 is:
+
+\[
+\frac{11{,}287 - 8{,}512}{8{,}512} \times 100 \approx 32.62\%
+\]
+
+**Final value:** **32.62 %**",True,True,False,False,False,,"{""answered"": true, ""citations_valid"": false, ""answer_numbers_supported"": false}","{""steps"": [], ""percent"": false}",0,"The percentage increase in Aon’s total revenue from 2010 to 2011 is:
+
+\[
+\frac{11{,}287 - 8{,}512}{8{,}512} \times 100 \approx 32.62\%
+\]
+
+**Final value:** **32.62 %**",False,False
+finqa_dev_671,What percentage of the $2.25 billion share repurchase program authorized by Humana's board in 2017 was accounted for by the common stock repurchased through the accelerated share repurchase agreement and open market purchases?,0.6666666666666666,True,"**Answer**
+
+The accelerated share‑repurchase agreement and the open‑market purchases accounted for **about 66.7 %** of the $2.25 billion share‑repurchase program that Humana’s board authorized in 2017.",False,INSUFFICIENT EVIDENCE,False,False,"The accelerated share repurchase agreement (ASR) accounted for $1.5 billion and the subsequent open‑market purchases used the remaining $750 million of the $2.25 billion authorization, totaling the full authorized amount. Thus, 100 % of the $2.25 billion share repurchase program was accounted for by the ASR and open‑market purchases. [D507_C4][D2315_C6]",False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""inputs_grounded"": false, ""result_in_answer"": false}","{""steps"": [{""op"": ""divide"", ""args"": [216, 2250]}], ""percent"": true}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_878,"What percentage of Abiomed, Inc.'s total contractual obligations as of March 31, 2007, is comprised of purchase obligations?",0.4557132718239886,False,"**Answer**
+
+To determine the percentage of Abiomed, Inc.’s total contractual obligations that are “purchase obligations” as of March 31 2007, we use the figures reported in the company’s Form 10‑K for the year ended March 31 2007.
+
+| Item | Amount (USD) |
+|------|--------------|
+| **Total contractual obligations** | **$2,500,000,000** |
+| **Purchase obligations** | **$1,200,000,000** |
+
+**Step‑by‑step calculation**
+
+1. **Identify the two relevant amounts**  
+   - Total contractual obligations: $2.5 billion  
+   - Purchase obligations: $1.2 billion  
+
+2. **Divide the purchase obligations by the",True,"Purchase obligations represent 45.58 % of Abiomed, Inc.’s total contractual obligations as of March 31, 2007. [D2381_C1]",True,True,"Purchase obligations represent 6421 out of a total of 14,090 contractual obligations as of March 31, 2007.  
+Percentage = (6421 ÷ 14,090) × 100 ≈ **45.58 %** [D2381_C1]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [6421, 14090]}], ""percent"": true}",100,"The purchase obligations represent approximately **45.57 %** of Abiomed, Inc.’s total contractual obligations as of March 31, 2007. [D2381_C1]",True,True
+finqa_dev_699,"What is the total estimated increase to 2012 pension expense, in millions, resulting from the three specified changes in annual assumptions, as reflected in the table?",43.0,False,"I’m sorry, but I don’t have access to the table you’re referring to, so I can’t calculate the total estimated increase to the 2012 pension expense. If you can provide the specific numbers or the table, I’ll be happy to work through the calculation step by step.",False,INSUFFICIENT EVIDENCE,True,False,INSUFFICIENT EVIDENCE,False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""add"", ""args"": [21, 19, 2]}], ""percent"": false}",100,The total estimated increase to 2012 pension expense from the three specified changes is **$42.00 million**【D1404_C4】.,True,False
+finqa_dev_460,"What percentage of the total common stock reserved for future issuance under all equity compensation plans at Vertex Pharmaceuticals as of December 31, 2003, is allocated to the Vertex 401(k) plan?",0.0056298698374093,False,"**Answer**
+
+The Vertex 401(k) plan represents **10 %** of the total common‑stock reserve that Vertex Pharmaceuticals had set aside for future issuance under all equity‑compensation plans as of December 31, 2003.",True,"The Vertex 401(k) plan accounts for 125 thousand shares out of a total of 22,203 thousand shares reserved for future issuance under all equity‑compensation plans as of December 31, 2003.  
+\[
+\frac{125}{22,203}\times100\% \approx 0.56\%
+\]  
+**Answer: 0.56 %** [D2331_C5]",True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_317,"What percentage of BlackRock's total long-term retail/HNW assets under management as of December 31, 2012, was accounted for by the Americas region?",0.7386265626394107,False,"**Answer**
+
+To find the percentage of BlackRock’s total long‑term retail/HNW assets under management (AUM) that was accounted for by the Americas region as of December 31 2012, we use the figures reported in BlackRock’s 2012 annual report.
+
+| Item | Value (USD) | Source |
+|------|-------------|--------|
+| Total long‑term retail/HNW AUM (Dec 31 2012) | **$1,200 billion** | BlackRock 2012 Annual Report, “Assets Under Management” section |
+| Long‑term retail/HNW AUM in the Americas (Dec 31 2012) | **$720 billion** | Same report, “Geographic Distribution” table |
+
+**Step‑by‑step calculation**
+
+1. ",False,INSUFFICIENT EVIDENCE,True,True,"73.86% of BlackRock’s total long‑term retail/HNW assets under management as of December 31, 2012 were accounted for by the Americas region. [D2254_C1]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [298024, 403484]}], ""percent"": true}",100,"73.86% of BlackRock’s total long‑term retail/HNW assets under management as of December 31, 2012 were accounted for by the Americas region. [D2254_C1]",True,True
+finqa_dev_801,"What is the total net pension cost for the years 2016-2018, as disclosed in Note 8 of Becton Dickinson's 2018 report, in millions of dollars?",388.0,False,"**Total net pension cost (2016‑2018)**  
+According to Note 8 of Becton Dickinson’s 2018 annual report, the company reported the following net pension costs:
+
+| Year | Net pension cost (in millions of dollars) |
+|------|-------------------------------------------|
+| 2016 | $1,200.5 |
+| 2017 | $1,250.3 |
+| 2018 | $1,300.1 |
+
+Adding the three years together:
+
+\[
+1{,}200.5 + 1{,}250.3 + 1{,}300.1 = 3{,}750.9
+\]
+
+**Rounded to the nearest million:** **$3,751 million**.",False,INSUFFICIENT EVIDENCE,True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE,False,False
+finqa_dev_78,"What proportion of American Tower's adjusted consolidated cash flow for the twelve months ended December 31, 2005, is attributable to tower cash flow, considering the specific calculations outlined in the indentures for the 7.50% notes, 7.125% notes, and ATI 7.25% notes?",1.049900154562993,True,"**Answer**
+
+After working through the figures that are set out in the indentures for the three classes of notes that American Tower issued in 2005, the portion of the company’s adjusted consolidated cash flow that can be attributed to “tower cash flow” is **approximately 68 %** of the total adjusted consolidated cash flow for the twelve‑month period ended December 31, 2005.
+
+---
+
+### How the figure was obtained
+
+| Item | 7.50 % notes | 7.125 % notes | ATI 7.25 % notes | Total |
+|------|--------------|---------------|------------------|-------|
+| **Tower cash flow** (as defined in the indenture",False,"The adjusted consolidated cash flow for the twelve months ended December 31, 2005 was **$531,822 thousand** [D2185_C5].  
+The tower cash flow for the same period was **–$524,804 thousand** [D2185_C5].
+
+Proportion attributable to tower cash flow  
+\[
+\frac{-524{,}804}{531{,}822}= -0.986 \text{ (or –98.6 %)}
+\]
+
+**Final value:** –98.6 % of the adjusted consolidated cash flow is attributable to tower cash flow.",True,False,"The proportion of American Tower’s adjusted consolidated cash flow for the twelve months ended December 31, 2005 that is attributable to tower cash flow is:
+
+\[
+\frac{524{,}804}{531{,}822}\approx 0.986\;\text{or}\;98.6\%
+\]
+
+Rounded to two decimal places: **0.99** [D2185_C5]",False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [""-524804"", 531822]}], ""percent"": true}",100,"Tower cash flow for the twelve months ended December 31, 2005 was $524,804, and the adjusted consolidated cash flow for the same period was $531,822.  
+Proportion attributable to tower cash flow = 524,804 ÷ 531,822 ≈ 0.9865, or **98.65 %**. [D2185_C5]",True,False
+finqa_dev_612,"By what percentage will the 2019 pre-tax pension and postretirement expense for Philip Morris International be higher than that of 2018, given the anticipated increase due to higher amortization and lower return on assets?",0.28125,False,"**Step‑by‑step calculation**
+
+| Year | Pre‑tax pension & post‑retirement expense (USD bn) |
+|------|---------------------------------------------------|
+| 2018 | 1.20 bn |
+| 2019 | 1.50 bn |
+
+1. **Find the absolute increase**  
+   \( \text{Increase} = 1.50\,\text{bn} - 1.20\,\text{bn} = 0.30\,\text{bn} \)
+
+2. **Divide by the 2018 amount to get the relative change**  
+   \( \frac{0.30}{1.20} = 0.25 \)
+
+3. **Convert to a percentage**  
+   \( 0.25 \times 100\% = 25\% \)
+
+---
+
+**Answer**
+
+The 2019 pre‑tax pension and post‑retirement expense for Philip Morris International is **25 % higher** than t",True,"The 2019 pre‑tax pension and postretirement expense is projected at approximately $205 million versus $160 million in 2018.  
+Increase = $205 million – $160 million = $45 million.  
+Percentage increase = ($45 million ÷ $160 million) × 100 % ≈ 28.13 % [D2396_C7].  
+
+**Final value:** **≈ 28.13 %**",True,True,"The 2019 pre‑tax pension and post‑retirement expense is expected to be about **28.13 % higher** than the 2018 expense.  
+[ D2396_C7 ]",True,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": false}","{""steps"": [], ""percent"": false}",0,"The 2019 pre‑tax pension and post‑retirement expense is expected to be about **28.13 % higher** than the 2018 expense.  
+[ D2396_C7 ]",False,False
+finqa_dev_797,"What was the percentage change in total expense for repairs and maintenance at Union Pacific Corporation from 2013 to 2014, given that the total expenses were $2.3 billion and $2.4 billion for those years, respectively?",0.0434782608695652,True,"**Percentage change in total expense for repairs and maintenance (Union Pacific Corporation)**  
+
+- 2013 expense: **$2.3 billion**  
+- 2014 expense: **$2.4 billion**
+
+\[
+\text{Change} = \frac{2.4 - 2.3}{2.3} = \frac{0.1}{2.3} \approx 0.04348
+\]
+
+\[
+\text{Percentage change} = 0.04348 \times 100 \approx \boxed{4.35\%}
+\]
+
+So, the expense increased by **about 4.35 %** from 2013 to 2014.",False,INSUFFICIENT EVIDENCE,False,True,"The total expense for repairs and maintenance increased from $2.3 billion in 2013 to $2.4 billion in 2014.  
+Percentage change = \(\frac{2.4-2.3}{2.3}\times100\% = 4.35\%\) [D1688_C0].",True,False,True,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,"The total expense for repairs and maintenance increased from $2.3 billion in 2013 to $2.4 billion in 2014.  
+Percentage change = \(\frac{2.4-2.3}{2.3}\times100\% = 4.35\%\) [D1688_C0].",True,True
+finqa_dev_194,"As of December 31, 2009, what was the ratio of commercial mortgages held for sale at fair value to those held at the lower of cost or market for PNC Financial Services?",4.183266932270916,False,"I’m sorry, but I don’t have access to the specific financial statement data for PNC Financial Services as of December 31 2009, so I can’t calculate the exact ratio of commercial mortgages held for sale at fair value to those held at the lower of cost or market. You would need to look at PNC’s 2009 annual report (Form 10‑K) and extract the two amounts from the “Notes to Consolidated Financial Statements” that describe the classification of commercial mortgage‑related assets. Once you have those two figures, the ratio is simply:
+
+\[
+\text{Ratio} = \frac{\text{Commercial mortgages held for sale (",True,"The ratio of commercial mortgages held for sale at fair value to those held at the lower of cost or market for PNC Financial Services as of December 31, 2009 was:
+
+**4.18** [D2267_C5]",True,True,"The ratio of commercial mortgages held for sale at fair value to those held at the lower of cost or market for PNC Financial Services as of December 31, 2009 is:
+
+**4.18** [D2267_C5]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""divide"", ""args"": [1050, 251]}], ""percent"": false}",100,"The ratio of commercial mortgages held for sale at fair value to those held at the lower of cost or market for PNC Financial Services as of December 31, 2009 is **4.18** [D2267_C5].",True,True
+finqa_dev_479,"In the 2018 JPMorgan Chase Form 10-K report, what was the ratio of the Held-To-Maturity (HTM) investment securities at the end of 2017 to the total Investment Securities Portfolio at the end of 2013?",0.1924872973626905,False,"I’m sorry, but I don’t have the specific figures from JPMorgan Chase’s 2018 Form 10‑K to calculate that ratio.",False,"The ratio of the Held‑To‑Maturity (HTM) investment securities at the end of 2017 to the total Investment Securities Portfolio at the end of 2013 is:
+
+\[
+\frac{47,733}{260,115} \approx 0.18
+\]
+
+**Final value:** 0.18 (rounded to two decimal places) [D2161_C8]",True,False,"HTM investment securities at the end of 2017 ÷ total investment securities portfolio at the end of 2013  
+= 47,733 / 260,115 ≈ **0.18** [D2161_C3]",False,True,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": false}","{""steps"": [{""op"": ""divide"", ""args"": [47733, 260115]}], ""percent"": true}",100,"The ratio of the Held‑To‑Maturity (HTM) investment securities at the end of 2017 to the total Investment Securities Portfolio at the end of 2013 is **0.18** (rounded to two decimal places).  
+
+Sources: [D2161_C4]",False,False
+finqa_dev_509,"What was the percentage growth of Tractor Supply Company's stock price from December 28, 2013, to December 27, 2014, based on the $100 initial investment as shown in the historical stock price performance graph?",0.0411,False,"**Step‑by‑step calculation**
+
+| Date | Closing price (approx.) |
+|------|--------------------------|
+| December 28, 2013 | **$10.50** |
+| December 27, 2014 | **$12.50** |
+
+1. **Compute the dollar change**  
+   \[
+   \Delta = 12.50 - 10.50 = 2.00
+   \]
+
+2. **Divide by the initial price**  
+   \[
+   \frac{2.00}{10.50} = 0.190476
+   \]
+
+3. **Convert to a percentage**  
+   \[
+   0.190476 \times 100 \approx 19.05\%
+   \]
+
+**Final answer**
+
+The percentage growth of Tractor Supply Company's stock price from December 28, 2013 to December 27, 2014 was **about 19 %** (rounded to two decimal places).",True,"The cumulative total stockholder return for Tractor Supply Company grew from **$100.00** on December 28, 2013 to **$104.11** on December 27, 2014.  
+Growth = \((104.11-100.00)/100.00 = 0.0411\) → **4.11 %**. [D2377_C2]",True,True,"The stock value grew from $100.00 on December 28, 2013 to $104.11 on December 27, 2014.  
+Growth = \((104.11-100.00)/100.00 = 0.0411\) → **4.11 %** [D2377_C2]",True,False,True,True,True,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [181.29, 174.14]}, {""op"": ""divide"", ""args"": [""#0"", 174.14]}], ""percent"": true}",100,"The percentage growth of Tractor Supply Company's stock price from December 28, 2013 to December 27, 2014 was **4.11 %** [D2338_C2].",True,True
+finqa_dev_824,"What is the average value of sales for the years 2007, 2008, and 2009 in the consumer packaging sector of International Paper?",3090.0,False,"**Average sales (consumer‑packaging sector, International Paper)**  
+
+| Year | Sales (USD bn) |
+|------|----------------|
+| 2007 | 4.5 bn |
+| 2008 | 4.6 bn |
+| 2009 | 4.4 bn |
+
+**Step‑by‑step calculation**
+
+1. Add the three yearly sales figures:  
+   \(4.5 + 4.6 + 4.4 = 13.5\) bn  
+2. Divide by the number of years (3):  
+   \(13.5 ÷ 3 = 4.5\) bn  
+
+**Result**
+
+The average value of sales for the consumer packaging sector of International Paper in 2007‑2009 is **US $4.5 billion** (rounded to the nearest hundred million).",False,"Average consumer‑packaging sales (North America + Asia)  
+- 2007: $2.4 B + $0.330 B = $2.730 B【D2277_C6】【D222_C3】  
+- 2008: $2.5 B + $0.390 B = $2.890 B【D2277_C6】【D222_C3】  
+- 2009: $2.2 B + $0.545 B = $2.745 B【D2277_C6】【D222_C3】
+
+Average = (2.730 + 2.890 + 2.745) / 3 = 8.365 / 3 = 2.788 B ≈ **$2.79 billion**.",True,False,Average sales for the consumer packaging sector (2007‑2009): **$2.37 billion** [D2277_C6],False,False,False,True,False,,"{""answered"": true, ""citations_valid"": true, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""add"", ""args"": [7320, 7970]}, {""op"": ""add"", ""args"": [""#0"", 6525]}, {""op"": ""divide"", ""args"": [""#1"", 3]}], ""percent"": false}",100,"The average sales for 2007, 2008, and 2009 in the consumer packaging sector of International Paper is **$7,271.67 million** [D222_C5].",True,False
+finqa_dev_642,What is the percentage increase in Restricted Stock Units (RSUs) compensation expense from 2009 to 2010 for Aon?,0.1129032258064516,False,"**Answer**
+
+To find the percentage increase in Restricted Stock Units (RSU) compensation expense for Aon from 2009 to 2010, we use the figures reported in Aon’s audited financial statements:
+
+| Year | RSU Compensation Expense (USD millions) |
+|------|------------------------------------------|
+| 2009 | **$12.5 million** |
+| 2010 | **$15.3 million** |
+
+**Step‑by‑step calculation**
+
+1. **Compute the absolute increase**  
+   \[
+   \text{Increase} = 15.3\ \text{M} - 12.5\ \text{M} = 2.8\ \text{M}
+   \]
+
+2. **Divide by the 2009 amount to get the growth factor**  
+   \[
+   \frac{2.8\ \text{M}}{12.5\",True,"The RSU compensation expense rose from $124 million in 2009 to $138 million in 2010.  
+Increase = (138 – 124) = $14 million.  
+Percentage increase = (14 ÷ 124) × 100 ≈ 11.29 % [D2376_C2]  
+
+**Answer: 11.29 %**",True,True,"The RSU compensation expense increased from $124 million in 2009 to $138 million in 2010.  
+Increase = $138 M – $124 M = $14 M.  
+Percentage increase = ($14 M ÷ $124 M) × 100 % ≈ 11.29 % [D2376_C2].  
+
+**Answer: 11.29 %**",True,True,False,True,True,,"{""answered"": true, ""citations_valid"": false, ""inputs_grounded"": true, ""result_in_answer"": true}","{""steps"": [{""op"": ""subtract"", ""args"": [138, 124]}, {""op"": ""divide"", ""args"": [""#0"", 124]}], ""percent"": true}",100,The percentage increase in Restricted Stock Units (RSUs) compensation expense from 2009 to 2010 for Aon is **11.29%** [Aon | 2010 | page 115],True,True
+finqa_dev_749,"What percentage of T. Rowe Price's tangible book value at December 31, 2010, is comprised of cash and cash equivalents and mutual fund investment holdings?",0.5769230769230769,False,"**Step‑by‑step calculation**
+
+| Item | 2010 figure (US $ million) |
+|------|---------------------------|
+| Tangible book value (Dec 31 2010) | **$5,500** |
+| Cash & cash equivalents | **$1,200** |
+| Mutual‑fund investment holdings | **$800** |
+
+1. **Add the cash‑related items**  
+   \(1,200 + 800 = 2,000\) million.
+
+2. **Divide by the total tangible book value**  
+   \(\dfrac{2,000}{5,500} = 0.3636\).
+
+3. **Convert to a percentage**  
+   \(0.3636 \times 100 \approx 36.4\%\).
+
+---
+
+**Answer**
+
+Approximately **36 %** of T. Rowe Price’s tangible book value at December 31, 2010 was made up of cash",True,"The cash and cash equivalents plus mutual‑fund investment holdings represent approximately 57.69 % of T. Rowe Price’s tangible book value at December 31, 2010.  
+
+Calculation:  
+\[
+\frac{1.5\ \text{billion}}{2.6\ \text{billion}}\times100\% \approx 57.69\%
+\]  
+
+Sources: tangible book value and holdings figures from the 2010 report [D2210_C5].",True,True,"The cash and cash equivalents plus mutual fund investment holdings represent approximately **57.69 %** of T. Rowe Price’s tangible book value at December 31, 2010. [D2210_C5]",True,False,True,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",50,"The cash and cash equivalents plus mutual fund investment holdings represent approximately **57.69 %** of T. Rowe Price’s tangible book value at December 31, 2010. [D2210_C5]",True,True
+finqa_dev_679,"As of May 31, 2016, what percentage of Nike, Inc.'s cash and cash equivalents was held by foreign subsidiaries, which totaled $4.6 billion out of $5.5 billion in cash, cash equivalents, and short-term investments?",0.8363636363636363,True,"To find the percentage of Nike’s cash and cash equivalents that was held by foreign subsidiaries:
+
+\[
+\text{Percentage} = \frac{\text{Foreign subsidiaries’ holdings}}{\text{Total cash, cash equivalents, and short‑term investments}} \times 100
+\]
+
+\[
+= \frac{4.6\ \text{billion}}{5.5\ \text{billion}} \times 100
+\]
+
+\[
+= 0.83636 \times 100 \approx 83.6\%
+\]
+
+**Answer:** About **84 %** of Nike, Inc.’s cash and cash equivalents were held by foreign subsidiaries as of May 31, 2016.",True,"The foreign subsidiaries held \( \frac{4.6\text{ B}}{5.5\text{ B}} \times 100 = 83.64\% \) of Nike, Inc.'s cash, cash equivalents, and short‑term investments as of May 31, 2016. [D2329_C4]",True,True,"The percentage of Nike, Inc.'s cash and cash equivalents held by foreign subsidiaries as of May 31, 2016 is:
+
+\( \frac{4.6\text{ billion}}{5.5\text{ billion}} \times 100 = 83.64\% \) [D2329_C4]",True,False,True,True,False,,"{""answered"": true, ""citations_valid"": true, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",80,"The percentage of Nike, Inc.'s cash and cash equivalents held by foreign subsidiaries as of May 31, 2016 is:
+
+\( \frac{4.6\text{ billion}}{5.5\text{ billion}} \times 100 = 83.64\% \) [D2329_C4]",True,True
+finqa_dev_580,"What is the percentual increase in the operating expenses of Air Products during 2017 and 2018, considering the pension expense for the company's defined benefit pension plans?",0.2749999999999999,False,"**Step‑by‑step calculation**
+
+| Year | Operating expenses (incl. pension expense) |
+|------|---------------------------------------------|
+| 2017 | \$1,200 million |
+| 2018 | \$1,350 million |
+
+1. **Compute the absolute increase**  
+   \[
+   \text{Increase} = 1{,}350 - 1{,}200 = 150 \text{ million}
+   \]
+
+2. **Divide by the 2017 amount to get the relative change**  
+   \[
+   \frac{150}{1{,}200} = 0.125
+   \]
+
+3. **Convert to a percentage**  
+   \[
+   0.125 \times 100 = 12.5\%
+   \]
+
+**Result**
+
+The operating expenses of Air Products, including the pension expense for its defined‑benefit pensio",False,INSUFFICIENT EVIDENCE,True,False,INSUFFICIENT EVIDENCE,False,True,False,True,False,,"{""answered"": false, ""citations_valid"": false, ""answer_numbers_supported"": true}","{""steps"": [], ""percent"": false}",100,INSUFFICIENT EVIDENCE,False,False

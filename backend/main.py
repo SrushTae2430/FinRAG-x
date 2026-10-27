@@ -159,3 +159,13 @@ def metrics(user: str = Depends(current_user)):
     return {"main": main,
             "retrieval": _read_json("extra_metrics.json"),
             "sufficiency": _read_json("sufficiency.json")}
+
+@app.get("/results")
+def results(user: str = Depends(current_user)):
+    p = DATA / "eval_results_v2.csv"
+    if not p.exists():
+        return []
+    df = pd.read_csv(p)
+    cols = ["id", "question", "gold", "A_correct", "B_correct", "C_correct",
+            "D_raw_correct", "D_refused", "D_correct"]
+    return json.loads(df[cols].to_json(orient="records"))

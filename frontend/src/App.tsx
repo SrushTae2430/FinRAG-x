@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { ask, uploadDoc, type AskResponse } from "./api"
 import Login from "./Login"
-import { Compare } from "./Extra"
+import { Evaluation, Compare } from "./Extra"
 import "./App.css"
 
 const EXAMPLE =
@@ -316,6 +316,21 @@ function Workspace({ token, email, onLogout }: { token: string; email: string; o
                       </span>
                     </p>
                   )}
+                  {isChangePattern && steps[0].args[0] > 0 && steps[0].args[1] > 0 && (() => {
+                    const oldV: number = steps[0].args[1]
+                    const newV: number = steps[0].args[0]
+                    const max = Math.max(oldV, newV)
+                    return (
+                      <svg viewBox="0 0 380 64" width="100%" role="img" aria-label="Previous and current value">
+                        <text x="0" y="22" fontSize="12" fill="#6b716d">Previous</text>
+                        <rect x="64" y="8" width={(oldV / max) * 220} height="18" fill="#b9b5a6" />
+                        <text x={70 + (oldV / max) * 220} y="22" fontSize="12" fill="#1c1f1d">{fmt(oldV, 2)}</text>
+                        <text x="0" y="52" fontSize="12" fill="#6b716d">Current</text>
+                        <rect x="64" y="38" width={(newV / max) * 220} height="18" fill="#2f5d46" />
+                        <text x={70 + (newV / max) * 220} y="52" fontSize="12" fill="#1c1f1d">{fmt(newV, 2)}</text>
+                      </svg>
+                    )
+                  })()}
                   <div className="result-row">
                     <span>Result</span>
                     <span className={`result num ${result < 0 ? "neg" : ""}`}>
@@ -415,6 +430,7 @@ export default function App() {
 
   const tabs: [string, string][] = [
     ["ask", "Analyze"],
+    ["eval", "Evaluation"],
     ["compare", "Compare retrieval"],
   ]
 
@@ -430,6 +446,7 @@ export default function App() {
       <div style={{ display: page === "ask" ? "block" : "none" }}>
         <Workspace token={token} email={email} onLogout={logout} />
       </div>
+      {page === "eval" && <Evaluation token={token} onLogout={logout} />}
       {page === "compare" && <Compare token={token} onLogout={logout} />}
     </>
   )

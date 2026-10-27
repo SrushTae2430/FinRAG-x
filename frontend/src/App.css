@@ -281,3 +281,5 @@ mark {
 }
 .tabs button:hover { color: var(--ink); }
 .tabs button.on { color: var(--green); border-bottom-color: var(--green); }
+.chart { margin: 8px 0 18px; }
+.chart figcaption { margin-top: 4px; }

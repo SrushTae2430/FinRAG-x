@@ -370,6 +370,152 @@ def _result_in_answer(result, answer):
                 return True
     return False
 
+def _derived(v, d, nums):
+    """True if v equals a+b, |a-b|, a*b or a/b (optionally x100 or /100) for two different
+    numbers a, b in the sorted list nums. Only used for answers with enough digits (rounding
+    window of at most 0.1%), because short numbers like 0.32 match too many things by chance."""
+    from bisect import bisect_left
+    floor = 0.5 * 10 ** (-d) + 1e-9
+    if v <= 0 or floor / v > 0.001:
+        return False
+
+    def has(lo, hi, a):
+        if lo > hi:
+            return False
+        i = bisect_left(nums, lo)
+        while i < len(nums) and nums[i] <= hi:
+            if nums[i] != a:
+                return True
+            i += 1
+        return False
+
+    for s in (1.0, 100.0, 0.01):
+        t = v / s
+        tol = floor / s
+        for a in nums:
+            if has(t - a - tol, t - a + tol, a):                      # a + b
+                return True
+            if has(a - t - tol, a - t + tol, a):                      # a - b
+                return True
+            if has(a + t - tol, a + t + tol, a):                      # b - a
+                return True
+            if has((t - tol) / a, (t + tol) / a, a):                  # a * b
+                return True
+            if t - tol > 0 and has(a / (t + tol), a / (t - tol), a):  # a / b
+                return True
+            if has(a * (t - tol), a * (t + tol), a):                  # b / a
+                return True
+    return False
+
+
+def derived_coverage(answer, evidence, question=""):
+    """Like number_coverage, but a number also counts as supported when it is derived by simple
+    arithmetic from two numbers in the evidence chunks that the answer cites."""
+    answer_nums = [(abs(v), d) for v, d in extract_numbers(answer) if not is_year(v, d)]
+    if not answer_nums:
+        return 1.0
+    pool_all = set()
+    for c in evidence:
+        pool_all |= {abs(p) for p in numbers_in(c["text"])}
+    pool_all |= {abs(p) for p in numbers_in(question)}
+    pool_all.discard(0.0)
+
+    cited = set(re.findall(r"D\d+_C\d+", answer))
+    chunks = [c for c in evidence if c["chunk_id"] in cited] or evidence
+    base = set()
+    for c in chunks:
+        base |= {abs(p) for p in numbers_in(c["text"])}
+    base |= {abs(p) for p in numbers_in(question)}
+    base.discard(0.0)
+    nums = sorted(x for x in base if not (1900 <= x <= 2100 and x == int(x)))
+
+    supported = 0
+    for v, d in answer_nums:
+        floor = 0.5 * 10 ** (-d) + 1e-9
+        direct = any(abs(v - p * s) <= max(0.005 * p * s, floor) for p in pool_all for s in _SCALES)
+        if direct or _derived(v, d, nums) or (
+                FIX2 and re.search(r"\b(average|mean|total|sum)\b", question, re.I)
+                and _derived3(v, d, nums)):
+            supported += 1
+    return supported / len(answer_nums)
+
+FIX2 = True   # switch used by the ablation script; True = new checks
+
+from itertools import combinations
+from bisect import bisect_left
+
+_DESC_CITE_RE = re.compile(r"[\[【][^\]】]*page\s*\d+[^\]】]*[\]】]", re.I)
+
+
+def _grounded(v, pool):
+    """Input number is in the evidence, allowing units/thousands/millions scaling."""
+    return any(round(abs(v) * s, 6) in pool for s in (1, 1e3, 1e-3, 1e6, 1e-6))
+
+
+def _supported_direct(v, d, pool):
+    floor = 0.5 * 10 ** (-d) + 1e-9
+    return any(abs(v - p * s) <= max(0.005 * p * s, floor) for p in pool for s in _SCALES)
+
+
+def _from_operands(v, d, S):
+    """v follows from simple arithmetic on numbers S (already supported by the evidence)."""
+    floor = 0.5 * 10 ** (-d) + 1e-9
+
+    def hit(x):
+        return any(abs(v - x * s) <= floor for s in (1.0, 100.0, 0.01))
+
+    for i, a in enumerate(S):
+        for j, b in enumerate(S):
+            if i == j:
+                continue
+            if hit(a + b) or hit(a - b) or hit(a * b) or hit((a + b) / 2):
+                return True
+            if b and (hit(a / b) or hit((a - b) / b)):
+                return True
+    for t in combinations(S, 3):
+        if hit(sum(t)) or hit(sum(t) / 3):
+            return True
+    return False
+
+
+def answer_consistency(answer, evidence, question=""):
+    """Numbers the answer states that are not in the evidence must follow, by simple
+    arithmetic, from numbers in the answer that ARE supported (e.g. 'change = (431-471)/471 = -8.49%')."""
+    pool = set()
+    for c in evidence:
+        pool |= numbers_in(c["text"])
+    pool |= numbers_in(question)
+    pool.discard(0.0)
+    nums = [(abs(v), d) for v, d in extract_numbers(answer) if not is_year(v, d)]
+    if not nums:
+        return True
+    S = [v for v, d in nums if _supported_direct(v, d, pool)]
+    U = [(v, d) for v, d in nums if not _supported_direct(v, d, pool)]
+    for _ in range(3):                      # let derived numbers feed later ones (diff -> ratio)
+        if not U:
+            break
+        new = [(v, d) for v, d in U if _from_operands(v, d, S[:15])]
+        if not new:
+            break
+        S += [v for v, _ in new]
+        U = [x for x in U if x not in new]
+    return not U
+
+
+def _derived3(v, d, nums):
+    """v is the sum or the average of three evidence numbers. Only for precise answers
+    (rounding window <= 0.05%), so chance matches are very unlikely."""
+    floor = 0.5 * 10 ** (-d) + 1e-9
+    if v <= 0 or floor / v > 0.0005:
+        return False
+    for mult in (1.0, 3.0):
+        t, tol = v * mult, floor * mult
+        for i, a in enumerate(nums):
+            for b in nums[i + 1:]:
+                k = bisect_left(nums, t - a - b - tol)
+                if k < len(nums) and nums[k] <= t - a - b + tol:
+                    return True
+    return False
 
 def verify(answer, evidence, program=None, result=None, question=""):
     """Every value must be True for the answer to be released."""
@@ -378,16 +524,20 @@ def verify(answer, evidence, program=None, result=None, question=""):
     checks = {}
     checks["answered"] = bool(answer.strip()) and "INSUFFICIENT EVIDENCE" not in answer.upper()
     cited = set(re.findall(r"D\d+_C\d+", answer))
-    checks["citations_valid"] = bool(cited) and cited <= ev_ids
+    if cited:
+        checks["citations_valid"] = cited <= ev_ids
+    else:   # descriptive citation such as [Aon | 2010 | page 115]
+        checks["citations_valid"] = bool(FIX2 and _DESC_CITE_RE.search(answer))
     if program and result is not None:
         pool = {round(p, 6) for p in numbers_in(ev_text) | numbers_in(question)}
         inputs = program_inputs(program)
-        checks["inputs_grounded"] = bool(inputs) and all(round(abs(v), 6) in pool for v in inputs)
+        grounded = _grounded if FIX2 else (lambda v, pl: round(abs(v), 6) in pl)
+        checks["inputs_grounded"] = bool(inputs) and all(grounded(v, pool) for v in inputs)
         checks["result_in_answer"] = _result_in_answer(result, answer)
     else:
-        # No engine result: any number in the answer is the LLM's own arithmetic or recall.
-        # The old verifier let these through unchecked. Require them to appear in the evidence.
         checks["answer_numbers_supported"] = (
             number_coverage(answer, evidence, question, result) == 1.0
+            or derived_coverage(answer, evidence, question) == 1.0
+            or (FIX2 and answer_consistency(answer, evidence, question))
         )
     return checks
